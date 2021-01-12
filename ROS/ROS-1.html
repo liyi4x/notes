@@ -1,0 +1,327 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ROS开发环境 · Notes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Liyi">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ROS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="ROS-1.html">
+            
+                <a href="ROS-1.html">
+            
+                    
+                    ROS开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ROS开发环境</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ros&#x5F00;&#x53D1;&#x73AF;&#x5883;">ROS&#x5F00;&#x53D1;&#x73AF;&#x5883;</h1>
+<h2 id="&#x7248;&#x672C;&#x9009;&#x62E9;">&#x7248;&#x672C;&#x9009;&#x62E9;</h2>
+<table>
+<thead>
+<tr>
+<th>ROS&#x7248;&#x672C;</th>
+<th>Ubuntu &#x7248;&#x672C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://wiki.ros.org/kinetic/Installation" target="_blank">ROS Kinetic Kame</a></td>
+<td>Ubuntu 16.04</td>
+</tr>
+<tr>
+<td><a href="http://wiki.ros.org/melodic/Installation" target="_blank">ROS Melodic Morenia</a></td>
+<td>Ubuntu 18.04</td>
+</tr>
+<tr>
+<td><a href="http://wiki.ros.org/noetic/Installation" target="_blank">ROS Noetic Ninjemys</a></td>
+<td>Ubuntu 20.04</td>
+</tr>
+</tbody>
+</table>
+<p>ros&#x7684;&#x5404;&#x4E2A;&#x7248;&#x672C;&#x4E4B;&#x95F4;&#x4E0D;&#x76F8;&#x4E92;&#x517C;&#x5BB9;&#xFF0C;&#x5B89;&#x88C5;&#x524D;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7248;&#x672C;&#x5BF9;&#x5E94;</p>
+<h2 id="&#x6DFB;&#x52A0;&#x8F6F;&#x4EF6;&#x6E90;">&#x6DFB;&#x52A0;&#x8F6F;&#x4EF6;&#x6E90;</h2>
+<p>&#x4F7F;&#x7528;<a href="http://mirrors.ustc.edu.cn/help/ros.html" target="_blank">&#x4E2D;&#x79D1;&#x5927;&#x7684;&#x955C;&#x50CF;&#x6E90;</a>&#x5B89;&#x88C5;ROS</p>
+<pre><code class="lang-Bash">sudo sh -c <span class="hljs-string">&apos;. /etc/lsb-release &amp;&amp; echo &quot;deb http://mirrors.ustc.edu.cn/ros/ubuntu/ $DISTRIB_CODENAME main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&apos;</span>
+</code></pre>
+<h2 id="&#x6DFB;&#x52A0;keys">&#x6DFB;&#x52A0;keys</h2>
+<pre><code class="lang-Bash">sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+</code></pre>
+<p>apt-key&#x7528;&#x4E8E;&#x7BA1;&#x7406;Debian Linux&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x5BC6;&#x94A5;&#x3002;&#x6BCF;&#x4E2A;&#x53D1;&#x5E03;&#x7684;deb&#x5305;&#xFF0C;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x5BC6;&#x94A5;&#x8BA4;&#x8BC1;&#x7684;&#xFF0C;apt-key&#x7528;&#x6765;&#x7BA1;&#x7406;&#x5BC6;&#x94A5;&#x3002;</p>
+<h2 id="&#x66F4;&#x65B0;&#x8F6F;&#x4EF6;&#x6E90;">&#x66F4;&#x65B0;&#x8F6F;&#x4EF6;&#x6E90;</h2>
+<pre><code class="lang-Bash">sudo apt-get update
+sudo apt-get upgrade
+</code></pre>
+<p>update&#x662F;&#x66F4;&#x65B0;&#x8F6F;&#x4EF6;&#x5217;&#x8868;&#xFF0C;upgrade&#x662F;&#x66F4;&#x65B0;&#x5DF2;&#x5B89;&#x88C5;&#x7684;&#x8F6F;&#x4EF6;</p>
+<ul>
+<li>&#x53C2;&#x8003;&#x94FE;&#x63A5;<ul>
+<li><a href="https://www.jianshu.com/p/42a1850bdcf6" target="_blank">apt-get update&#x4E0E;upgrade&#x7684;&#x533A;&#x522B;</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x5B89;&#x88C5;ros">&#x5B89;&#x88C5;ROS</h2>
+<p>ros&#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x56DB;&#x79CD;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;&#xFF0C;Ubuntu16.04&#x5B89;&#x88C5;Kinetic&#x7248;&#x672C;</p>
+<ul>
+<li><p>&#x684C;&#x9762;&#x5B8C;&#x6574;&#x7248;&#x5B89;&#x88C5;</p>
+<p>  &#x5305;&#x62EC;ROS&#x3001;rqt&#x3001;rviz&#x3001;&#x901A;&#x7528;&#x673A;&#x5668;&#x4EBA;&#x51FD;&#x6570;&#x5E93;&#x3001;2D/3D&#x4EFF;&#x771F;&#x5668;&#x3001;&#x5BFC;&#x822A;&#x4EE5;&#x53CA;2D/3D&#x611F;&#x77E5;&#x529F;&#x80FD;</p>
+<pre><code class="lang-Bash">  sudo apt-get install ros-kinetic-desktop-full
+</code></pre>
+</li>
+<li><p>&#x684C;&#x9762;&#x7248;&#x5B89;&#x88C5;</p>
+<p>  &#x5305;&#x542B;ROS&#x3001;rqt&#x3001;rviz&#x4EE5;&#x53CA;&#x901A;&#x7528;&#x673A;&#x5668;&#x4EBA;&#x51FD;&#x6570;&#x5E93;</p>
+<pre><code class="lang-Bash">  sudo apt-get install ros-kinetic-desktop
+</code></pre>
+</li>
+<li><p>&#x57FA;&#x7840;&#x7248;&#x5B89;&#x88C5;</p>
+<p>  &#x5305;&#x542B;ROS&#x6838;&#x5FC3;&#x8F6F;&#x4EF6;&#x5305;&#x3001;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x4EE5;&#x53CA;&#x901A;&#x4FE1;&#x76F8;&#x5173;&#x7684;&#x7A0B;&#x5E8F;&#x5E93;&#xFF0C;&#x65E0;GUI&#x5DE5;&#x5177;</p>
+<pre><code class="lang-Bash">  sudo apt-get install ros-kinetic-ros-base
+</code></pre>
+</li>
+<li><p>&#x5355;&#x72EC;&#x8F6F;&#x4EF6;&#x5305;&#x5B89;&#x88C5;</p>
+<p>  &#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5B89;&#x88C5;&#x6307;&#x5B9A;&#x8F6F;&#x4EF6;&#x5305;&#xFF0C;&#x8FD9;&#x79CD;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;&#x5728;&#x8FD0;&#x884C;ROS&#x7F3A;&#x5C11;&#x67D0;&#x4E9B;package&#x4F9D;&#x8D56;&#x65F6;&#x4F1A;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x3002;</p>
+<pre><code class="lang-bash">  sudo apt-get install ros-kinetic-PACKAGE
+</code></pre>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: ROS">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ROS开发环境","level":"1.2.1","depth":2,"previous":{"title":"ROS","level":"1.2","depth":1,"path":"ROS/README.md","ref":"ROS/README.md","articles":[{"title":"ROS开发环境","level":"1.2.1","depth":2,"path":"ROS/ROS-1.md","ref":"ROS/ROS-1.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/ROS-1.md","mtime":"2021-01-12T20:31:56.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-12T20:37:45.005Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
