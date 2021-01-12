@@ -1,0 +1,17 @@
+{
+    "title": "Notes",
+    "author": "Liyi",
+    "description": "A new life",
+    "gitbook": "3.2.3",
+    "language":"zh-hans",
+    "plugins": [
+      "-lunr",
+      "-search",
+      "-sharing",
+      "theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git",
+      "search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git",
+      "splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git",
+      "chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git",
+      "code"
+    ]
+  }
