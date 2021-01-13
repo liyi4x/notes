@@ -1,0 +1,358 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>二进制包和源码包 · Notes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Liyi">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ROS-3.html" />
+    
+    
+    <link rel="prev" href="ROS-1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ROS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="ROS-1.html">
+            
+                <a href="ROS-1.html">
+            
+                    
+                    ROS开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="ROS-2.html">
+            
+                <a href="ROS-2.html">
+            
+                    
+                    二进制包和源码包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="ROS-3.html">
+            
+                <a href="ROS-3.html">
+            
+                    
+                    ROS工作空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >二进制包和源码包</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4E8C;&#x8FDB;&#x5236;&#x5305;&#x548C;&#x6E90;&#x7801;&#x5305;">&#x4E8C;&#x8FDB;&#x5236;&#x5305;&#x548C;&#x6E90;&#x7801;&#x5305;</h1>
+<h2 id="1-&#x533A;&#x522B;">1. &#x533A;&#x522B;</h2>
+<p>&#x4E8C;&#x8FDB;&#x5236;&#x5305;&#x662F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;<code>sudo apt-get install</code>&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x5B89;&#x88C5;&#x7684;&#xFF0C;&#x80FD;&#x591F;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x800C;&#x65E0;&#x9700;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x3002;
+&#x6E90;&#x4EE3;&#x7801;&#x5305;&#x662F;&#x7A0B;&#x5E8F;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x80FD;&#x591F;&#x6839;&#x636E;&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x518D;&#x7ECF;&#x8FC7;&#x8BA1;&#x7B97;&#x673A;&#x7F16;&#x8BD1;&#xFF0C;&#x751F;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x624D;&#x80FD;&#x8FD0;&#x884C;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x533A;&#x522B;</th>
+<th>&#x4E8C;&#x8FDB;&#x5236;&#x5305;</th>
+<th>&#x6E90;&#x4EE3;&#x7801;&#x5305;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x4E0B;&#x8F7D;&#x65B9;&#x5F0F;</td>
+<td><code>sudo apt-get install</code></td>
+<td><code>git clone</code></td>
+</tr>
+<tr>
+<td>ROS&#x5305;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;</td>
+<td><code>/opt/ros/kinetic/</code></td>
+<td>&#x968F;&#x610F;&#x5B58;&#x653E;&#xFF0C;&#x4E00;&#x822C;&#x4E3A;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</td>
+</tr>
+<tr>
+<td>&#x5E94;&#x7528;&#x573A;&#x666F;</td>
+<td>&#x57FA;&#x7840;&#x8F6F;&#x4EF6;</td>
+<td>&#x7B2C;&#x4E09;&#x65B9;&#x7A0B;&#x5E8F;&#xFF0C;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x6E90;&#x7801;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-ros&#x4E8C;&#x8FDB;&#x5236;&#x5305;&#x7684;&#x5B89;&#x88C5;">2. ROS&#x4E8C;&#x8FDB;&#x5236;&#x5305;&#x7684;&#x5B89;&#x88C5;</h2>
+<p>&#x4F8B;&#x5982;&#x5B89;&#x88C5;<code>GMapping</code>&#x5305;</p>
+<pre><code class="lang-bash">sudo apt-get install ros-kinetic-slam-gmapping
+</code></pre>
+<p>&#x6240;&#x6709;apt&#x5B98;&#x65B9;&#x7684;ROS&#x529F;&#x80FD;&#x5305;&#x547D;&#x540D;&#x5747;&#x4E3A;<code>ros-&#x7248;&#x672C;&#x4EE3;&#x53F7;-&#x529F;&#x80FD;&#x5305;&#x540D;</code>, <code>kinect</code>&#x4E3A;Ubuntu16.04&#x4E0B;&#x7684;ROS&#x7684;&#x540D;&#x79F0;</p>
+<h2 id="3-&#x6E90;&#x7801;&#x5B89;&#x88C5;">3. &#x6E90;&#x7801;&#x5B89;&#x88C5;</h2>
+<p>&#x4EE5;<a href="https://github.com/DroidAITech/ROS-Academy-for-Beginners" target="_blank"><code>ROS-Academy-for-Beginners</code></a>&#x4E3A;&#x4F8B;&#x8FDB;&#x884C;&#x5B89;&#x88C5;</p>
+<h3 id="31-&#x521B;&#x5EFA;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;">3.1. &#x521B;&#x5EFA;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;</h3>
+<pre><code class="lang-bash">mkdir -p ~/tutorial_ws/src
+<span class="hljs-built_in">cd</span> tutorial_ws/src
+</code></pre>
+<h3 id="32-&#x4E0B;&#x8F7D;&#x6E90;&#x7801;">3.2. &#x4E0B;&#x8F7D;&#x6E90;&#x7801;</h3>
+<pre><code class="lang-bash">git <span class="hljs-built_in">clone</span> https://github.com/DroidAITech/ROS-Academy-for-Beginners.git
+</code></pre>
+<h3 id="33-&#x5B89;&#x88C5;&#x4F9D;&#x8D56;">3.3. &#x5B89;&#x88C5;&#x4F9D;&#x8D56;</h3>
+<p>&#x5728;ros&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x5185;&#x5B89;&#x88C5;&#x5168;&#x90E8;&#x5305;&#x7684;&#x4F9D;&#x8D56;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> ~/tutorial_ws
+rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
+</code></pre>
+<p>&#x53E6;&#x5916;&#x9700;&#x8981;<code>Gazebo</code>&#x7684;&#x7248;&#x672C;&#x9AD8;&#x4E8E; 7.0&#xFF0C;&#x53EF;&#x901A;&#x8FC7;<code>gazebo -v</code>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x7248;&#x672C;&#xFF0C;&#x5347;&#x7EA7;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-bash">sudo sh -c <span class="hljs-string">&apos;echo &quot;deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/gazebo-stable.list&apos;</span>
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install gazebo7
+</code></pre>
+<h3 id="34-&#x7F16;&#x8BD1;">3.4. &#x7F16;&#x8BD1;</h3>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> ~/tutorial_ws
+catkin_make
+<span class="hljs-built_in">source</span> ~/tutorial_ws/devel/setup.bash
+</code></pre>
+<ul>
+<li><code>source</code>&#x547D;&#x4EE4;&#x5728;&#x6BCF;&#x4E00;&#x6B21;&#x6253;&#x5F00;&#x65B0;&#x7EC8;&#x7AEF;&#x7684;&#x65F6;&#x5019;&#x90FD;&#x8981;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x6545;&#x53EF;&#x4EE5;&#x5199;&#x5165;<code>~/.bashrc</code></li>
+<li><code>catkin_make</code>&#x662F;&#x4E00;&#x4E2A;&#x7F16;&#x8BD1;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;</li>
+</ul>
+<h3 id="35-&#x8FD0;&#x884C;&#x4EFF;&#x771F;&#x7A0B;&#x5E8F;">3.5. &#x8FD0;&#x884C;&#x4EFF;&#x771F;&#x7A0B;&#x5E8F;</h3>
+<pre><code class="lang-bash">roslaunch robot_sim_demo robot_spawn.launch
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ROS-1.html" class="navigation navigation-prev " aria-label="Previous page: ROS开发环境">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ROS-3.html" class="navigation navigation-next " aria-label="Next page: ROS工作空间">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"二进制包和源码包","level":"1.2.2","depth":2,"next":{"title":"ROS工作空间","level":"1.2.3","depth":2,"path":"ROS/ROS-3.md","ref":"ROS/ROS-3.md","articles":[]},"previous":{"title":"ROS开发环境","level":"1.2.1","depth":2,"path":"ROS/ROS-1.md","ref":"ROS/ROS-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/ROS-2.md","mtime":"2021-01-13T07:01:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-13T07:05:25.241Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

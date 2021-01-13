@@ -1,0 +1,457 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ROS工作空间 · Notes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Liyi">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="ROS-2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ROS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="ROS-1.html">
+            
+                <a href="ROS-1.html">
+            
+                    
+                    ROS开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="ROS-2.html">
+            
+                <a href="ROS-2.html">
+            
+                    
+                    二进制包和源码包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="ROS-3.html">
+            
+                <a href="ROS-3.html">
+            
+                    
+                    ROS工作空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ROS工作空间</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ros-&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;">ROS &#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;</h1>
+<h2 id="1-catkin&#x7F16;&#x8BD1;&#x7CFB;&#x7EDF;">1. Catkin&#x7F16;&#x8BD1;&#x7CFB;&#x7EDF;</h2>
+<p>&#x6E90;&#x7801;&#x9700;&#x8981;&#x7F16;&#x8BD1;&#x3001;&#x94FE;&#x63A5;&#x7B49;&#x6B65;&#x9AA4;&#x624D;&#x80FD;&#x751F;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF0C;&#x5BF9;&#x4E8E; ROS &#x7B49;&#x5927;&#x578B;&#x9879;&#x76EE;&#x800C;&#x8A00;&#xFF0C;&#x9700;&#x8981;&#x7BA1;&#x7406;&#x9879;&#x76EE;&#x7ED3;&#x6784;&#xFF0C;&#x8FDB;&#x884C;&#x81EA;&#x52A8;&#x5316;&#x7F16;&#x8BD1;&#x7B49;&#x3002;</p>
+<p>Catkin &#x662F; ROS &#x5BF9; CMake &#x8FDB;&#x884C;&#x62D3;&#x5C55;&#x4E4B;&#x540E;&#x7684;&#xFF0C;CMake &#x80FD;&#x591F;&#x751F;&#x6210;<code>makefile</code>&#x6587;&#x4EF6;&#xFF0C;&#x8FDB;&#x800C;&#x80FD;&#x591F;&#x63A7;&#x5236;&#x7F16;&#x8BD1;&#x7684;&#x8FC7;&#x7A0B;</p>
+<p>Catkin &#x7F16;&#x8BD1;&#x7CFB;&#x7EDF;&#x7684;&#x5C42;&#x7EA7;&#x7ED3;&#x6784;&#x5982;&#x56FE;</p>
+<p><img src="imgs/catkin.jpg" alt="catkin"></p>
+<h3 id="11-catkin&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;">1.1. Catkin&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;</h3>
+<ul>
+<li>&#x5728;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;<code>catkinws/src/</code>&#x4E0B;&#x8FDB;&#x884C;&#x9012;&#x5F52;&#x67E5;&#x8BE2;&#x6BCF;&#x4E00;&#x4E2A;ROS&#x5305;</li>
+<li>ROS&#x5305;&#x4E2D;&#x6709;<code>package.xml</code>&#x548C;<code>CMakeLists.txt</code>&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x6839;&#x636E;<code>CMakeLists.txt</code>&#x751F;&#x6210;&#x76F8;&#x5E94;&#x7684;<code>makefile</code>&#x6587;&#x4EF6;</li>
+<li>&#x518D; <code>make</code> &#x8FDB;&#x884C;&#x7F16;&#x8BD1;</li>
+</ul>
+<p>&#x76F8;&#x5F53;&#x4E8E;<code>catkin_make</code>&#x662F;&#x5C06;cmake&#x4E0E;make&#x8FDB;&#x884C;&#x4E86;&#x5408;&#x5E76;&#x64CD;&#x4F5C;&#xFF0C;&#x540C;&#x65F6;&#x63D0;&#x9AD8;&#x4E86;&#x8DE8;&#x9879;&#x76EE;&#x4F9D;&#x8D56;&#x6027;</p>
+<h3 id="12-&#x4F7F;&#x7528;catkinmake&#x8FDB;&#x884C;&#x7F16;&#x8BD1;">1.2. &#x4F7F;&#x7528;catkin_make&#x8FDB;&#x884C;&#x7F16;&#x8BD1;</h3>
+<p>&#x5FC5;&#x987B;&#x8981;&#x5728;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x7684;&#x76EE;&#x5F55;&#x4E0B;&#x6267;&#x884C;<code>catkin_make</code>&#xFF0C;&#x4E4B;&#x540E;&#x9700;&#x8981;<code>source</code>&#x547D;&#x4EE4;&#x66F4;&#x65B0;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5426;&#x5219;<code>rosrun</code>&#x65E0;&#x6CD5;&#x6267;&#x884C;ros&#x5305;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> ~/catkinws
+catkin_make
+<span class="hljs-built_in">source</span> ./devel/setup.bash
+</code></pre>
+<h2 id="2-ros&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x7ED3;&#x6784;">2. ROS&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x7ED3;&#x6784;</h2>
+<pre><code class="lang-text">&#x2500; build
+&#x2502;   &#x251C;&#x2500;&#x2500; catkin
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; catkin_generated
+&#x2502;   &#x2502;       &#x2514;&#x2500;&#x2500; version
+&#x2502;   &#x2502;           &#x2514;&#x2500;&#x2500; package.cmake
+&#x2502;   &#x251C;&#x2500;&#x2500;
+......
+
+&#x2502;   &#x251C;&#x2500;&#x2500; catkin_make.cache
+&#x2502;   &#x251C;&#x2500;&#x2500; CMakeCache.txt
+&#x2502;   &#x251C;&#x2500;&#x2500; CMakeFiles
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500;
+......
+
+&#x251C;&#x2500;&#x2500; devel
+&#x2502;   &#x251C;&#x2500;&#x2500; env.sh
+&#x2502;   &#x251C;&#x2500;&#x2500; lib
+&#x2502;   &#x251C;&#x2500;&#x2500; setup.bash
+&#x2502;   &#x251C;&#x2500;&#x2500; setup.sh
+&#x2502;   &#x251C;&#x2500;&#x2500; _setup_util.py
+&#x2502;   &#x2514;&#x2500;&#x2500; setup.zsh
+&#x2514;&#x2500;&#x2500; src
+&#x2514;&#x2500;&#x2500; CMakeLists.txt -&gt; /opt/ros/kinetic/share/catkin/cmake/toplevel.cmake
+</code></pre>
+<ul>
+<li><code>src/</code>&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5404;&#x79CD;<code>package</code>&#xFF0C;&#x5176;&#x4E2D;&#x540C;&#x4E00;&#x7C7B;&#x591A;&#x4E2A;&#x529F;&#x80FD;&#x5305;&#x53EF;&#x4EE5;&#x5B58;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x5B50;&#x76EE;&#x5F55;&#x4E0B;</li>
+<li><code>build/</code>&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4E2D;&#x95F4;&#x6587;&#x4EF6;&#xFF0C;&#x7F13;&#x5B58;&#x4FE1;&#x606F;&#x7B49;</li>
+<li><code>devel/</code>&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x751F;&#x6210;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF0C;&#x5305;&#x62EC;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF0C;&#x9759;&#x6001;&#x94FE;&#x63A5;&#x5E93;&#xFF0C;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5E93;&#x7B49;</li>
+</ul>
+<p><code>src/</code>&#x4E0B;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x7ECF;&#x8FC7;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x4E2D;&#x95F4;&#x6587;&#x4EF6;&#xFF0C;&#x5B58;&#x5728;<code>build/</code>&#x4E0B;&#xFF0C;<code>build/</code>&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x518D;&#x7ECF;&#x8FC7;&#x94FE;&#x63A5;&#x7B49;&#x5904;&#x7406;&#xFF0C;&#x6700;&#x540E;&#x751F;&#x6210;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF0C;&#x5E93;&#x6587;&#x4EF6;&#x7B49;&#xFF0C;&#x5B58;&#x653E;&#x5728;<code>devel/</code></p>
+<h3 id="21-package&#x7ED3;&#x6784;">2.1. package&#x7ED3;&#x6784;</h3>
+<p>package&#x662F;catkin&#x7F16;&#x8BD1;&#x7684;&#x57FA;&#x672C;&#x5355;&#x5143;&#xFF0C;&#x4E00;&#x4E2A;package&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x51FA;&#x6765;&#x591A;&#x4E2A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF08;ROS&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x3001;&#x52A8;&#x6001;&#x9759;&#x6001;&#x5E93;&#x3001;&#x5934;&#x6587;&#x4EF6;&#x7B49;&#x7B49;&#xFF09;</p>
+<pre><code class="lang-TEXT">&#x251C;&#x2500;&#x2500; CMakeLists.txt    #package&#x7684;&#x7F16;&#x8BD1;&#x89C4;&#x5219;(&#x5FC5;&#x987B;)
+&#x251C;&#x2500;&#x2500; package.xml       #package&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;(&#x5FC5;&#x987B;)
+&#x251C;&#x2500;&#x2500; src/              #&#x6E90;&#x4EE3;&#x7801;&#x6587;&#x4EF6;
+&#x251C;&#x2500;&#x2500; include/          #C++&#x5934;&#x6587;&#x4EF6;
+&#x251C;&#x2500;&#x2500; scripts/          #&#x53EF;&#x6267;&#x884C;&#x811A;&#x672C;
+&#x251C;&#x2500;&#x2500; msg/              #&#x81EA;&#x5B9A;&#x4E49;&#x6D88;&#x606F;
+&#x251C;&#x2500;&#x2500; srv/              #&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;
+&#x251C;&#x2500;&#x2500; action/           #&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;
+&#x251C;&#x2500;&#x2500; models/           #3D&#x6A21;&#x578B;&#x6587;&#x4EF6;
+&#x251C;&#x2500;&#x2500; urdf/             #urdf&#x6587;&#x4EF6;
+&#x251C;&#x2500;&#x2500; launch/           #launch&#x6587;&#x4EF6;
+&#x251C;&#x2500;&#x2500; config/           #&#x53C2;&#x6570;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+</code></pre>
+<p><code>CMakeLists.txt</code>&#x6587;&#x4EF6;&#x548C;<code>package.xml</code>&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x4E86;package</p>
+<ul>
+<li><code>CMakeLists.txt</code>&#x5B9A;&#x4E49;&#x7684;&#x662F;package&#x7684;&#x7F16;&#x8BD1;&#x89C4;&#x5219;&#xFF0C;&#x7528;&#x5230;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x7B49;</li>
+<li><code>package.xml</code>&#x5B9A;&#x4E49;&#x7684;&#x662F;&#x529F;&#x80FD;&#x5305;&#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x63CF;&#x8FF0;package&#x7684;&#x5305;&#x540D;&#x3001;&#x7248;&#x672C;&#x53F7;&#x3001;&#x4F5C;&#x8005;&#x3001;&#x4F9D;&#x8D56;&#x7B49;&#x4FE1;&#x606F;</li>
+<li><code>src/</code>&#x5B58;&#x653E;&#x7684;&#x662F;&#x6E90;&#x4EE3;&#x7801;&#x6587;&#x4EF6;&#xFF0C;&#x4E3B;&#x8981;&#x662F;cpp&#x6E90;&#x7801;&#x4EE5;&#x53CA;python&#x7684;module&#x6587;&#x4EF6;</li>
+<li><code>include/</code>&#x5B58;&#x653E;&#x7684;&#x662F;hpp&#x5934;&#x6587;&#x4EF6;</li>
+<li><code>scripts/</code>&#x5B58;&#x653E;&#x7684;&#x662F;&#x811A;&#x672C;&#x6587;&#x4EF6;&#xFF0C;shell&#x811A;&#x672C;&#x3001;python&#x811A;&#x672C;&#x7B49;</li>
+<li><code>msg/</code>&#x5B58;&#x653E;&#x7684;&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x7684;&#x6D88;&#x606F;&#x6587;&#x4EF6;&#xFF08;*.msg&#xFF09;</li>
+<li><code>srv/</code>&#x5B58;&#x653E;&#x7684;&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x7684;&#x670D;&#x52A1;&#x6587;&#x4EF6;&#xFF08;*.srv&#xFF09;</li>
+<li><code>action/</code>&#x5B58;&#x653E;&#x7684;&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x7684;&#x52A8;&#x4F5C;&#x6587;&#x4EF6;&#xFF08;*.action&#xFF09;</li>
+<li><code>models/</code>&#x5B58;&#x653E;&#x673A;&#x5668;&#x4EBA;&#x6216;&#x4EFF;&#x771F;&#x573A;&#x666F;&#x7684;3D&#x6A21;&#x578B;&#xFF08;.sda, .stl, .dae&#x7B49;&#xFF09;</li>
+<li><code>urdf/</code>&#x5B58;&#x653E;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x63CF;&#x8FF0;&#xFF08;.urdf, .xacro&#xFF09;</li>
+<li><code>launch/</code>&#x5B58;&#x653E;&#x7684;&#x662F;&#x542F;&#x52A8;&#x6587;&#x4EF6;&#xFF08;*.launch&#xFF09;</li>
+<li><code>config/</code>&#x5B58;&#x653E;&#x7684;&#x662F;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF08;*.yaml&#xFF09;</li>
+</ul>
+<h3 id="22-&#x521B;&#x5EFA;package">2.2. &#x521B;&#x5EFA;package</h3>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;package&#x9700;&#x8981;&#x5728;<code>catkin_ws/src/</code>&#x4E0B;&#xFF0C;&#x7528;&#x5230;<code>catkin_create_pkg</code>&#x547D;&#x4EE4;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x811A;&#x624B;&#x67B6;&#xFF0C;&#x642D;&#x5EFA;package&#x6846;&#x67B6;&#x7ED3;&#x6784;</p>
+<pre><code class="lang-bash">catkin_create_pkg package depends
+</code></pre>
+<p>&#x5176;&#x4E2D;<code>package</code>&#x662F;&#x5305;&#x540D;&#xFF0C;<code>depends</code>&#x662F;&#x4F9D;&#x8D56;&#x7684;&#x5305;&#x540D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F9D;&#x8D56;&#x591A;&#x4E2A;&#x8F6F;&#x4EF6;&#x5305;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;package&#x53EB;&#x505A;<code>test_pkg</code>&#xFF0C;&#x4F9D;&#x8D56;<code>roscpp</code>&#x3001;<code>rospy</code>&#x3001;<code>std_msgs</code>(&#x5E38;&#x7528;&#x4F9D;&#x8D56;)&#x3002;</p>
+<pre><code class="lang-bash">catkin_create_pkg <span class="hljs-built_in">test</span>_pkg roscpp rospy std_msgs
+</code></pre>
+<p>&#x6B64;&#x65F6;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x4E3A;</p>
+<pre><code class="lang-text">&#x251C;&#x2500;&#x2500; CMakeLists.txt
+&#x251C;&#x2500;&#x2500; include
+&#x2502;   &#x2514;&#x2500;&#x2500; test_pkg
+&#x251C;&#x2500;&#x2500; package.xml
+&#x2514;&#x2500;&#x2500; src
+</code></pre>
+<p><code>catkin_create_pkg</code>&#x9ED8;&#x8BA4;&#x521B;&#x5EFA;&#x597D;&#x4E86;<code>CMakeLists.txt</code>&#x548C;<code>package.xml</code>&#xFF0C;&#x5E76;&#x5C06;&#x9879;&#x76EE;&#x4F9D;&#x8D56;&#x9879;&#x6DFB;&#x52A0;&#x5230;&#x4E86;<code>package.xml</code></p>
+<h2 id="3-package&#x76F8;&#x5173;&#x7684;&#x547D;&#x4EE4;">3. package&#x76F8;&#x5173;&#x7684;&#x547D;&#x4EE4;</h2>
+<h3 id="31-rospack">3.1. rospack</h3>
+<p><code>rospack</code>&#x662F;ros&#x7684;package&#x7BA1;&#x7406;&#x5DE5;&#x5177;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">rostopic&#x547D;&#x4EE4;</th>
+<th style="text-align:center">&#x4F5C;&#x7528;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>rospack help</code></td>
+<td style="text-align:center">&#x663E;&#x793A;rospack&#x7684;&#x7528;&#x6CD5;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rospack list</code></td>
+<td style="text-align:center">&#x5217;&#x51FA;&#x672C;&#x673A;&#x6240;&#x6709;package</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rospack depends [package]</code></td>
+<td style="text-align:center">&#x663E;&#x793A;package&#x7684;&#x4F9D;&#x8D56;&#x5305;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rospack find [package]</code></td>
+<td style="text-align:center">&#x5B9A;&#x4F4D;&#x67D0;&#x4E2A;package</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rospack profile</code></td>
+<td style="text-align:center">&#x5237;&#x65B0;&#x6240;&#x6709;package&#x7684;&#x4F4D;&#x7F6E;&#x8BB0;&#x5F55;</td>
+</tr>
+</tbody>
+</table>
+<p>package&#x7F3A;&#x7701;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;package</p>
+<h3 id="32-roscd">3.2. roscd</h3>
+<p><code>roscd</code>&#x547D;&#x4EE4;&#x7C7B;&#x4F3C;&#x4E0E;Linux&#x7CFB;&#x7EDF;&#x7684;<code>cd</code>&#xFF0C;&#x6539;&#x8FDB;&#x4E4B;&#x5904;&#x5728;&#x4E8E;<code>roscd</code>&#x53EF;&#x4EE5;<strong>&#x76F4;&#x63A5;</strong>&#x6539;&#x53D8;&#x76EE;&#x5F55;&#x5230;ROS&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x76EE;&#x5F55;&#x4E0B;</p>
+<h3 id="33-rosls">3.3. rosls</h3>
+<p><code>rosls</code>&#x4E5F;&#x53EF;&#x4EE5;&#x89C6;&#x4E3A;Linux&#x6307;&#x4EE4;<code>ls</code>&#x7684;&#x6539;&#x8FDB;&#x7248;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;<strong>&#x4EFB;&#x610F;&#x76EE;&#x5F55;</strong>&#x4E0B;&#x5217;&#x51FA;&#x76F8;&#x5E94;ROS&#x8F6F;&#x4EF6;&#x5305;&#x7684;&#x5185;&#x5BB9;</p>
+<p><code>rosls [pacakge]</code>&#x5217;&#x51FA;pacakge&#x4E0B;&#x7684;&#x6587;&#x4EF6;</p>
+<h3 id="34-rosdep">3.4. rosdep</h3>
+<p><code>rosdep</code>&#x662F;&#x7528;&#x4E8E;&#x7BA1;&#x7406;ROS package&#x4F9D;&#x8D56;&#x9879;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">rosdep&#x547D;&#x4EE4;</th>
+<th style="text-align:center">&#x4F5C;&#x7528;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>rosdep check [pacakge]</code></td>
+<td style="text-align:center">&#x68C0;&#x67E5;package&#x7684;&#x4F9D;&#x8D56;&#x662F;&#x5426;&#x6EE1;&#x8DB3;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rosdep install [pacakge]</code></td>
+<td style="text-align:center">&#x5B89;&#x88C5;pacakge&#x7684;&#x4F9D;&#x8D56;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rosdep db</code></td>
+<td style="text-align:center">&#x751F;&#x6210;&#x548C;&#x663E;&#x793A;&#x4F9D;&#x8D56;&#x6570;&#x636E;&#x5E93;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rosdep init</code></td>
+<td style="text-align:center">&#x521D;&#x59CB;&#x5316;/etc/ros/rosdep&#x4E2D;&#x7684;&#x6E90;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rosdep keys</code></td>
+<td style="text-align:center">&#x68C0;&#x67E5;package&#x7684;&#x4F9D;&#x8D56;&#x662F;&#x5426;&#x6EE1;&#x8DB3;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rosdep update</code></td>
+<td style="text-align:center">&#x66F4;&#x65B0;&#x672C;&#x5730;&#x7684;rosdep&#x6570;&#x636E;&#x5E93;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E00;&#x4E2A;&#x8F83;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x547D;&#x4EE4;&#x662F;<code>rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y</code>&#xFF0C;&#x7528;&#x4E8E;&#x5B89;&#x88C5;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x4E2D;<code>src</code>&#x8DEF;&#x5F84;&#x4E0B;&#x6240;&#x6709;package&#x7684;&#x4F9D;&#x8D56;&#x9879;&#xFF08;&#x7531;pacakge.xml&#x6587;&#x4EF6;&#x6307;&#x5B9A;&#xFF09;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ROS-2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 二进制包和源码包">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ROS工作空间","level":"1.2.3","depth":2,"previous":{"title":"二进制包和源码包","level":"1.2.2","depth":2,"path":"ROS/ROS-2.md","ref":"ROS/ROS-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/ROS-3.md","mtime":"2021-01-13T07:01:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-13T07:05:25.241Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
