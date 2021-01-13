@@ -1,0 +1,580 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>package.xml · Notes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Liyi">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="ROS-5.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ROS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="ROS-1.html">
+            
+                <a href="ROS-1.html">
+            
+                    
+                    ROS开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="ROS-2.html">
+            
+                <a href="ROS-2.html">
+            
+                    
+                    二进制包和源码包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="ROS-3.html">
+            
+                <a href="ROS-3.html">
+            
+                    
+                    ROS工作空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="ROS-4.html">
+            
+                <a href="ROS-4.html">
+            
+                    
+                    packages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="ROS-5.html">
+            
+                <a href="ROS-5.html">
+            
+                    
+                    CMakeLists.txt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.6" data-path="ROS-6.html">
+            
+                <a href="ROS-6.html">
+            
+                    
+                    package.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >package.xml</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="packagexml">package.xml</h1>
+<h2 id="1-packagexml&#x4F5C;&#x7528;">1. package.xml&#x4F5C;&#x7528;</h2>
+<p><code>package.xml</code>&#x4E5F;&#x662F;&#x4E00;&#x4E2A;catkin&#x7684;package&#x5FC5;&#x5907;&#x6587;&#x4EF6;&#xFF0C;&#x5B83;&#x662F;&#x8FD9;&#x4E2A;&#x8F6F;&#x4EF6;&#x5305;&#x7684;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;pacakge&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x3002;<code>pacakge.xml</code>&#x5305;&#x542B;&#x4E86;package&#x7684;&#x540D;&#x79F0;&#x3001;&#x7248;&#x672C;&#x53F7;&#x3001;&#x5185;&#x5BB9;&#x63CF;&#x8FF0;&#x3001;&#x7EF4;&#x62A4;&#x4EBA;&#x5458;&#x3001;&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x3001;&#x7F16;&#x8BD1;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x3001;&#x7F16;&#x8BD1;&#x4F9D;&#x8D56;&#x3001;&#x8FD0;&#x884C;&#x4F9D;&#x8D56;&#x7B49;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;<code>rospack find</code>&#x3001;<code>rosdep</code>&#x7B49;&#x547D;&#x4EE4;&#x4E4B;&#x6240;&#x4EE5;&#x80FD;&#x5FEB;&#x901F;&#x5B9A;&#x4F4D;&#x548C;&#x5206;&#x6790;&#x51FA;package&#x7684;&#x4F9D;&#x8D56;&#x9879;&#x4FE1;&#x606F;&#xFF0C;&#x5C31;&#x662F;&#x76F4;&#x63A5;&#x8BFB;&#x53D6;&#x4E86;&#x6BCF;&#x4E00;&#x4E2A;pacakge&#x4E2D;&#x7684;<code>package.xml</code>&#x6587;&#x4EF6;&#x3002;&#x5B83;&#x4E3A;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x4E86;&#x5FEB;&#x901F;&#x4E86;&#x89E3;&#x4E00;&#x4E2A;pacakge&#x7684;&#x6E20;&#x9053;&#x3002;</p>
+<h2 id="2-packagexml&#x5199;&#x6CD5;">2. package.xml&#x5199;&#x6CD5;</h2>
+<p>&#x76EE;&#x524D;Indigo&#x3001;Kinetic&#x3001;Lunar&#x7B49;&#x7248;&#x672C;&#x7684;ROS&#x90FD;&#x540C;&#x65F6;&#x652F;&#x6301;&#x4E24;&#x79CD;&#x7248;&#x672C;&#x7684;<code>package.xml</code>&#xFF0C;&#x6240;&#x4EE5;&#x65E0;&#x8BBA;&#x9009;format1&#x8FD8;&#x662F;format2&#x90FD;&#x53EF;&#x4EE5;&#x3002;</p>
+<p>&#x53C2;&#x8003;<a href="https://dlonng.com/posts/ros-package" target="_blank">&#x89E3;&#x6790; package.xml &#x6587;&#x4EF6;</a></p>
+<h3 id="21-format2">2.1. format2</h3>
+<p>&#x5728;&#x65B0;&#x7248;&#x672C;&#xFF08;format2&#xFF09;&#x4E2D;&#xFF0C;&#x5305;&#x542B;&#x7684;&#x6807;&#x7B7E;&#x4E3A;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x6807;&#x7B7E;&#x540D;</th>
+<th style="text-align:center">&#x4F5C;&#x7528;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&lt;pacakge&gt;</code></td>
+<td style="text-align:center">&#x6839;&#x6807;&#x8BB0;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;name&gt;</code></td>
+<td style="text-align:center">&#x5305;&#x540D;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;version&gt;</code></td>
+<td style="text-align:center">&#x7248;&#x672C;&#x53F7;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;description&gt;</code></td>
+<td style="text-align:center">&#x5185;&#x5BB9;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;maintainer&gt;</code></td>
+<td style="text-align:center">&#x7EF4;&#x62A4;&#x8005;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;license&gt;</code></td>
+<td style="text-align:center">&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x8BC1;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;buildtool_depend&gt;</code></td>
+<td style="text-align:center">&#x7F16;&#x8BD1;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#xFF0C;&#x901A;&#x5E38;&#x4E3A;catkin</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;depend&gt;</code></td>
+<td style="text-align:center">&#x6307;&#x5B9A;&#x4F9D;&#x8D56;&#x9879;&#x4E3A;&#x7F16;&#x8BD1;&#x3001;&#x5BFC;&#x51FA;&#x3001;&#x8FD0;&#x884C;&#x9700;&#x8981;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x6700;&#x5E38;&#x7528;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;build_depend&gt;</code></td>
+<td style="text-align:center">&#x7F16;&#x8BD1;&#x4F9D;&#x8D56;&#x9879;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;build_export_depend&gt;</code></td>
+<td style="text-align:center">&#x5BFC;&#x51FA;&#x4F9D;&#x8D56;&#x9879;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;exec_depend&gt;</code></td>
+<td style="text-align:center">&#x8FD0;&#x884C;&#x4F9D;&#x8D56;&#x9879;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;test_depend&gt;</code></td>
+<td style="text-align:center">&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4F9D;&#x8D56;&#x9879;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;doc_depend&gt;</code></td>
+<td style="text-align:center">&#x6587;&#x6863;&#x4F9D;&#x8D56;&#x9879;</td>
+</tr>
+</tbody>
+</table>
+<p><code>&lt;depend&gt;</code>&#x76F8;&#x5F53;&#x4E8E;<code>&lt;build_export_depend&gt;</code>&#x3001;<code>&lt;exec_depend&gt;</code>&#x3001;<code>&lt;build_depend&gt;</code> ,&#x76F8;&#x5F53;&#x4E8E;&#x5C06;&#x4E4B;&#x524D;&#x7684;<code>build</code>&#x548C;<code>run</code>&#x4F9D;&#x8D56;&#x9879;&#x63CF;&#x8FF0;&#x8FDB;&#x884C;&#x4E86;&#x7EC6;&#x5206;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;ROS&#x529F;&#x80FD;&#x5305;&#x90FD;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56;&#x9879;&#xFF0C;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x4E86;&#x6784;&#x5EFA;&#x3001;&#x6267;&#x884C;&#x3001;&#x6D4B;&#x8BD5;&#x3001;&#x6587;&#x6863;&#x4F9D;&#x8D56;&#x9879;&#x7684; xml &#x6587;&#x4EF6;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">package</span> <span class="hljs-attr">format</span> = &quot;<span class="hljs-attr">2</span>&quot;&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span> sensor_funsion <span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span> 1.2.3 <span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>
+      This package fusion point cloud and image.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span> www.xxx.com <span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">author</span>&gt;</span> DLonng <span class="hljs-tag">&lt;/<span class="hljs-name">author</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">maintainer</span> <span class="hljs-attr">email</span>=<span class="hljs-string">&quot;xxx@xxx.com&quot;</span>&gt;</span> xxx <span class="hljs-tag">&lt;/<span class="hljs-name">maintainer</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">license</span>&gt;</span> BSD <span class="hljs-tag">&lt;/<span class="hljs-name">license</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">buildtool_depend</span>&gt;</span> catkin <span class="hljs-tag">&lt;/<span class="hljs-name">buildtool_depend</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span> roscpp <span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span> std_msgs <span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span> message_generation <span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">exec_depend</span>&gt;</span> message_runtime <span class="hljs-tag">&lt;/<span class="hljs-name">exec_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">exec_depend</span>&gt;</span> rospy <span class="hljs-tag">&lt;/<span class="hljs-name">exec_depend</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">test_depend</span>&gt;</span> python-mock <span class="hljs-tag">&lt;/<span class="hljs-name">test_depend</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">doc_depend</span>&gt;</span> doxygen <span class="hljs-tag">&lt;/<span class="hljs-name">doc_depend</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">package</span>&gt;</span>
+</code></pre>
+<h3 id="22-format1">2.2. format1</h3>
+<p><code>pacakge.xml</code>&#x9075;&#x5FAA;xml&#x6807;&#x7B7E;&#x6587;&#x672C;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x7531;&#x4E8E;&#x7248;&#x672C;&#x66F4;&#x8FED;&#x539F;&#x56E0;&#xFF0C;&#x73B0;&#x5728;&#x6709;&#x4E24;&#x79CD;&#x683C;&#x5F0F;&#x5E76;&#x5B58;&#xFF08;format1&#x4E0E;format2&#xFF09;&#xFF0C;&#x4E0D;&#x8FC7;&#x533A;&#x522B;&#x4E0D;&#x5927;&#x3002;&#x8001;&#x7248;&#x672C;&#xFF08;format1&#xFF09;&#x7684;<code>pacakge.xml</code>&#x901A;&#x5E38;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x6807;&#x7B7E;:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x6807;&#x7B7E;&#x540D;</th>
+<th style="text-align:center">&#x4F5C;&#x7528;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&lt;pacakge&gt;</code></td>
+<td style="text-align:center">&#x6839;&#x6807;&#x8BB0;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;name&gt;</code></td>
+<td style="text-align:center">&#x5305;&#x540D;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;version&gt;</code></td>
+<td style="text-align:center">&#x7248;&#x672C;&#x53F7;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;description&gt;</code></td>
+<td style="text-align:center">&#x5185;&#x5BB9;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;maintainer&gt;</code></td>
+<td style="text-align:center">&#x7EF4;&#x62A4;&#x8005;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;license&gt;</code></td>
+<td style="text-align:center">&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x8BC1;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;buildtool_depend&gt;</code></td>
+<td style="text-align:center">&#x7F16;&#x8BD1;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#xFF0C;&#x901A;&#x5E38;&#x4E3A;catkin</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;build_depend&gt;</code></td>
+<td style="text-align:center">&#x7F16;&#x8BD1;&#x4F9D;&#x8D56;&#x9879;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;run_depend&gt;</code></td>
+<td style="text-align:center">&#x8FD0;&#x884C;&#x4F9D;&#x8D56;&#x9879;</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;test_depend&gt;</code></td>
+<td style="text-align:center">&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4F9D;&#x8D56;&#x9879;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">package</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span> sensor_funsion <span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span> 1.2.3 <span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>
+      This package fusion point cloud and image.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span> www.xxx.com <span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">author</span>&gt;</span> DLonng <span class="hljs-tag">&lt;/<span class="hljs-name">author</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">maintainer</span> <span class="hljs-attr">email</span>=<span class="hljs-string">&quot;xxx@xxx.com&quot;</span>&gt;</span> xxx <span class="hljs-tag">&lt;/<span class="hljs-name">maintainer</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">license</span>&gt;</span> BSD <span class="hljs-tag">&lt;/<span class="hljs-name">license</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">package</span>&gt;</span>
+</code></pre>
+<h2 id="3-pacakgexml&#x4F8B;&#x5B50;">3. pacakge.xml&#x4F8B;&#x5B50;</h2>
+<p>&#x4E3A;&#x4E86;&#x8BF4;&#x660E;pacakge.xml&#x5199;&#x6CD5;&#xFF0C;&#x8FD8;&#x662F;&#x4EE5;turtlesim&#x8F6F;&#x4EF6;&#x5305;&#x4E3A;&#x4F8B;&#xFF0C;&#x5176;<code>pacakge.xml</code>&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x6DFB;&#x52A0;&#x4E86;&#x76F8;&#x5173;&#x7684;&#x6CE8;&#x91CA;&#xFF1A;</p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span><span class="hljs-meta">?&gt;</span></span>       <span class="hljs-comment">&lt;!--&#x672C;&#x793A;&#x4F8B;&#x4E3A;&#x8001;&#x7248;&#x672C;&#x7684;pacakge.xml--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">package</span>&gt;</span>                   <span class="hljs-comment">&lt;!--pacakge&#x4E3A;&#x6839;&#x6807;&#x7B7E;&#xFF0C;&#x5199;&#x5728;&#x6700;&#x5916;&#x9762;--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>turtlesim<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.8.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>
+    turtlesim is a tool made for teaching ROS and ROS packages.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">maintainer</span> <span class="hljs-attr">email</span>=<span class="hljs-string">&quot;dthomas@osrfoundation.org&quot;</span>&gt;</span>Dirk Thomas<span class="hljs-tag">&lt;/<span class="hljs-name">maintainer</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">license</span>&gt;</span>BSD<span class="hljs-tag">&lt;/<span class="hljs-name">license</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">url</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;website&quot;</span>&gt;</span>http://www.ros.org/wiki/turtlesim<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">url</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;bugtracker&quot;</span>&gt;</span>https://github.com/ros/ros_tutorials/issues<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">url</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;repository&quot;</span>&gt;</span>https://github.com/ros/ros_tutorials<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">author</span>&gt;</span>Josh Faust<span class="hljs-tag">&lt;/<span class="hljs-name">author</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!--&#x7F16;&#x8BD1;&#x5DE5;&#x5177;&#x4E3A;catkin--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">buildtool_depend</span>&gt;</span>catkin<span class="hljs-tag">&lt;/<span class="hljs-name">buildtool_depend</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!--&#x7F16;&#x8BD1;&#x65F6;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x4EE5;&#x4E0B;&#x5305;--&gt;</span>  
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>geometry_msgs<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>    
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>qtbase5-dev<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>message_generation<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>qt5-qmake<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>rosconsole<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>roscpp<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>roscpp_serialization<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>roslib<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>rostime<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>std_msgs<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>std_srvs<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!--&#x8FD0;&#x884C;&#x65F6;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x4EE5;&#x4E0B;&#x5305;--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">run_depend</span>&gt;</span>geometry_msgs<span class="hljs-tag">&lt;/<span class="hljs-name">run_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">run_depend</span>&gt;</span>libqt5-core<span class="hljs-tag">&lt;/<span class="hljs-name">run_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">run_depend</span>&gt;</span>libqt5-gui<span class="hljs-tag">&lt;/<span class="hljs-name">run_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">run_depend</span>&gt;</span>message_runtime<span class="hljs-tag">&lt;/<span class="hljs-name">run_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">run_depend</span>&gt;</span>rosconsole<span class="hljs-tag">&lt;/<span class="hljs-name">run_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">run_depend</span>&gt;</span>roscpp<span class="hljs-tag">&lt;/<span class="hljs-name">run_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">run_depend</span>&gt;</span>roscpp_serialization<span class="hljs-tag">&lt;/<span class="hljs-name">run_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">run_depend</span>&gt;</span>roslib<span class="hljs-tag">&lt;/<span class="hljs-name">run_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">run_depend</span>&gt;</span>rostime<span class="hljs-tag">&lt;/<span class="hljs-name">run_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">run_depend</span>&gt;</span>std_msgs<span class="hljs-tag">&lt;/<span class="hljs-name">run_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">run_depend</span>&gt;</span>std_srvs<span class="hljs-tag">&lt;/<span class="hljs-name">run_depend</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">package</span>&gt;</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x5185;&#x5BB9;&#x662F;&#x8001;&#x7248;&#x672C;&#xFF08;format1&#xFF09;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5199;&#x6210;&#x65B0;&#x7248;&#x672C;&#xFF08;format2&#xFF09;&#x5219;&#x53EF;&#x4EE5;&#x6539;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">package</span> <span class="hljs-attr">format</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>      <span class="hljs-comment">&lt;!--&#x5728;&#x58F0;&#x660E;pacakge&#x65F6;&#x6307;&#x5B9A;format2&#xFF0C;&#x4E3A;&#x65B0;&#x7248;&#x683C;&#x5F0F;--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>turtlesim<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.8.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>
+    turtlesim is a tool made for teaching ROS and ROS packages.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">maintainer</span> <span class="hljs-attr">email</span>=<span class="hljs-string">&quot;dthomas@osrfoundation.org&quot;</span>&gt;</span>Dirk Thomas<span class="hljs-tag">&lt;/<span class="hljs-name">maintainer</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">license</span>&gt;</span>BSD<span class="hljs-tag">&lt;/<span class="hljs-name">license</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">url</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;website&quot;</span>&gt;</span>http://www.ros.org/wiki/turtlesim<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">url</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;bugtracker&quot;</span>&gt;</span>https://github.com/ros/ros_tutorials/issues<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">url</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;repository&quot;</span>&gt;</span>https://github.com/ros/ros_tutorials<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">author</span>&gt;</span>Josh Faust<span class="hljs-tag">&lt;/<span class="hljs-name">author</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!--&#x7F16;&#x8BD1;&#x5DE5;&#x5177;&#x4E3A;catkin--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">buildtool_depend</span>&gt;</span>catkin<span class="hljs-tag">&lt;/<span class="hljs-name">buildtool_depend</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!--&#x7528;depend&#x6765;&#x6574;&#x5408;build_depend&#x548C;run_depend--&gt;</span>  
+  <span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span>geometry_msgs<span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span>rosconsole<span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span>roscpp<span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span>roscpp_serialization<span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span>roslib<span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span>rostime<span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span>std_msgs<span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span>std_srvs<span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!--build_depend&#x6807;&#x7B7E;&#x672A;&#x53D8;--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>qtbase5-dev<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>message_generation<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>qt5-qmake<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!--run_depend&#x8981;&#x6539;&#x4E3A;exec_depend--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">exec_depend</span>&gt;</span>libqt5-core<span class="hljs-tag">&lt;/<span class="hljs-name">exec_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">exec_depend</span>&gt;</span>libqt5-gui<span class="hljs-tag">&lt;/<span class="hljs-name">exec_depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">exec_depend</span>&gt;</span>message_runtime<span class="hljs-tag">&lt;/<span class="hljs-name">exec_depend</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">package</span>&gt;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ROS-5.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: CMakeLists.txt">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"package.xml","level":"1.2.6","depth":2,"previous":{"title":"CMakeLists.txt","level":"1.2.5","depth":2,"path":"ROS/ROS-5.md","ref":"ROS/ROS-5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/ROS-6.md","mtime":"2021-01-13T15:08:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-13T15:11:01.110Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

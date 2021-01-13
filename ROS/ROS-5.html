@@ -1,0 +1,421 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CMakeLists.txt · Notes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Liyi">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ROS-6.html" />
+    
+    
+    <link rel="prev" href="ROS-4.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ROS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="ROS-1.html">
+            
+                <a href="ROS-1.html">
+            
+                    
+                    ROS开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="ROS-2.html">
+            
+                <a href="ROS-2.html">
+            
+                    
+                    二进制包和源码包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="ROS-3.html">
+            
+                <a href="ROS-3.html">
+            
+                    
+                    ROS工作空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="ROS-4.html">
+            
+                <a href="ROS-4.html">
+            
+                    
+                    packages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5" data-path="ROS-5.html">
+            
+                <a href="ROS-5.html">
+            
+                    
+                    CMakeLists.txt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="ROS-6.html">
+            
+                <a href="ROS-6.html">
+            
+                    
+                    package.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >CMakeLists.txt</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cmakeliststxt">CMakeLists.txt</h1>
+<p><code>CMakeLists.txt</code>&#x539F;&#x672C;&#x662F;Cmake&#x7F16;&#x8BD1;&#x7CFB;&#x7EDF;&#x7684;&#x89C4;&#x5219;&#x6587;&#x4EF6;&#xFF0C;&#x800C;Catkin&#x7F16;&#x8BD1;&#x7CFB;&#x7EDF;&#x57FA;&#x672C;&#x6CBF;&#x7528;&#x4E86;CMake&#x7684;&#x7F16;&#x8BD1;&#x98CE;&#x683C;&#xFF0C;&#x53EA;&#x662F;&#x9488;&#x5BF9;ROS&#x5DE5;&#x7A0B;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E9B;&#x5B8F;&#x5B9A;&#x4E49;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x5199;&#x6CD5;&#x4E0A;&#xFF0C;catkin&#x7684;<code>CMakeLists.txt</code>&#x4E0E;CMake&#x7684;&#x57FA;&#x672C;&#x4E00;&#x81F4;&#x3002;</p>
+<p>CMake&#x53C2;&#x8003;&#x4E66;</p>
+<ul>
+<li><a href="https://github.com/Akagi201/learning-cmake/blob/master/docs/cmake-practice.pdf" target="_blank">cmake-practice</a></li>
+</ul>
+<p>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x76F4;&#x63A5;&#x89C4;&#x5B9A;&#x4E86;&#x8FD9;&#x4E2A;package&#x8981;&#x4F9D;&#x8D56;&#x54EA;&#x4E9B;package&#xFF0C;&#x8981;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x54EA;&#x4E9B;&#x76EE;&#x6807;&#xFF0C;&#x5982;&#x4F55;&#x7F16;&#x8BD1;&#x7B49;&#x7B49;&#x6D41;&#x7A0B;&#x3002;&#x6240;&#x4EE5;<code>CMakeLists.txt</code>&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF0C;&#x5B83;&#x6307;&#x5B9A;&#x4E86;&#x7531;&#x6E90;&#x7801;&#x5230;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x89C4;&#x5219;&#xFF0C;catkin&#x7F16;&#x8BD1;&#x7CFB;&#x7EDF;&#x5728;&#x5DE5;&#x4F5C;&#x65F6;&#x9996;&#x5148;&#x4F1A;&#x627E;&#x5230;&#x6BCF;&#x4E2A;package&#x4E0B;&#x7684;<code>CMakeLists.txt</code>&#xFF0C;&#x7136;&#x540E;&#x6309;&#x7167;&#x89C4;&#x5219;&#x6765;&#x7F16;&#x8BD1;&#x6784;&#x5EFA;&#x3002;</p>
+<h2 id="turtlesim&#x7684;cmakelists">turtlesim&#x7684;CMakeLists</h2>
+<p>&#x4EE5;turtlesim&#x5C0F;&#x6D77;&#x9F9F;&#x8FD9;&#x4E2A;pacakge&#x4E3A;&#x4F8B;&#xFF0C;<code>roscd tuetlesim</code>&#x67E5;&#x770B;&#xFF0C;&#x5728;<code>turtlesim/CMakeLists.txt</code>&#x7684;&#x5199;&#x6CD5;&#x5982;&#x4E0B;:</p>
+<pre><code class="lang-cmake"><span class="hljs-keyword">cmake_minimum_required</span>(VERSION <span class="hljs-number">2.8</span>.<span class="hljs-number">3</span>)
+<span class="hljs-comment">#CMake&#x81F3;&#x5C11;&#x4E3A;2.8.3&#x7248;</span>
+
+<span class="hljs-keyword">project</span>(turtlesim)
+<span class="hljs-comment">#&#x9879;&#x76EE;(package)&#x540D;&#x79F0;&#x4E3A;turtlesim&#xFF0C;&#x5728;&#x540E;&#x7EED;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x4F7F;&#x7528;&#x53D8;&#x91CF;${PROJECT_NAME}&#x6765;&#x5F15;&#x7528;&#x9879;&#x76EE;&#x540D;&#x79F0;turltesim</span>
+
+<span class="hljs-keyword">find_package</span>(catkin REQUIRED COMPONENTS geometry_msgs message_generation rosconsole roscpp roscpp_serialization roslib rostime std_msgs std_srvs)
+<span class="hljs-comment">#cmake&#x5B8F;&#xFF0C;&#x6307;&#x5B9A;&#x4F9D;&#x8D56;&#x7684;&#x5176;&#x4ED6;pacakge&#xFF0C;&#x5B9E;&#x9645;&#x662F;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E9B;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5982;&lt;NAME&gt;_FOUND, &lt;NAME&gt;_INCLUDE_DIRS, &lt;NAME&gt;_LIBRARYIS</span>
+<span class="hljs-comment">#&#x6B64;&#x5904;catkin&#x662F;&#x5FC5;&#x5907;&#x4F9D;&#x8D56; &#x5176;&#x4F59;&#x7684;geometry_msgs...&#x4E3A;&#x7EC4;&#x4EF6;</span>
+
+<span class="hljs-keyword">find_package</span>(Qt5Widgets REQUIRED)
+<span class="hljs-keyword">find_package</span>(Boost REQUIRED COMPONENTS thread)
+
+<span class="hljs-keyword">include_directories</span>(<span class="hljs-keyword">include</span> <span class="hljs-variable">${catkin_INCLUDE_DIRS}</span> <span class="hljs-variable">${Boost_INCLUDE_DIRS}</span>)
+<span class="hljs-comment">#&#x6307;&#x5B9A;C++&#x7684;&#x5934;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</span>
+<span class="hljs-keyword">link_directories</span>(<span class="hljs-variable">${catkin_LIBRARY_DIRS}</span>)
+<span class="hljs-comment">#&#x6307;&#x5B9A;&#x94FE;&#x63A5;&#x5E93;&#x7684;&#x8DEF;&#x5F84;</span>
+
+add_message_files(DIRECTORY msg FILES
+Color.msg
+Pose.msg)
+<span class="hljs-comment">#&#x81EA;&#x5B9A;&#x4E49;msg&#x6587;&#x4EF6;</span>
+
+add_service_files(DIRECTORY srv FILES
+Kill.srv
+SetPen.srv
+Spawn.srv
+TeleportAbsolute.srv
+TeleportRelative.srv)
+<span class="hljs-comment">#&#x81EA;&#x5B9A;&#x4E49;srv&#x6587;&#x4EF6;</span>
+
+generate_messages(DEPENDENCIES geometry_msgs std_msgs std_srvs)
+<span class="hljs-comment">#&#x5728;add_message_files&#x3001;add_service_files&#x5B8F;&#x4E4B;&#x540E;&#x5FC5;&#x987B;&#x52A0;&#x4E0A;&#x8FD9;&#x53E5;&#x8BDD;&#xFF0C;&#x7528;&#x4E8E;&#x751F;&#x6210;srv msg&#x5934;&#x6587;&#x4EF6;/module&#xFF0C;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x4F4D;&#x4E8E;devel/include&#x4E2D;</span>
+
+catkin_package(CATKIN_DEPENDS geometry_msgs message_runtime std_msgs std_srvs)
+<span class="hljs-comment"># catkin&#x5B8F;&#x547D;&#x4EE4;&#xFF0C;&#x7528;&#x4E8E;&#x914D;&#x7F6E;ROS&#x7684;package&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x548C;CMake&#x6587;&#x4EF6;</span>
+<span class="hljs-comment"># &#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x5FC5;&#x987B;&#x5728;add_library()&#x6216;&#x8005;add_executable()&#x4E4B;&#x524D;&#x8C03;&#x7528;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x6709;5&#x4E2A;&#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF1A;</span>
+<span class="hljs-comment"># (1) INCLUDE_DIRS - &#x5BFC;&#x51FA;&#x5305;&#x7684;include&#x8DEF;&#x5F84;</span>
+<span class="hljs-comment"># (2) LIBRARIES - &#x5BFC;&#x51FA;&#x9879;&#x76EE;&#x4E2D;&#x7684;&#x5E93;</span>
+<span class="hljs-comment"># (3) CATKIN_DEPENDS - &#x8BE5;&#x9879;&#x76EE;&#x4F9D;&#x8D56;&#x7684;&#x5176;&#x4ED6;catkin&#x9879;&#x76EE;</span>
+<span class="hljs-comment"># (4) DEPENDS - &#x8BE5;&#x9879;&#x76EE;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x975E;catkin CMake&#x9879;&#x76EE;&#x3002;</span>
+<span class="hljs-comment"># (5) CFG_EXTRAS - &#x5176;&#x4ED6;&#x914D;&#x7F6E;&#x9009;&#x9879;</span>
+
+<span class="hljs-keyword">set</span>(turtlesim_node_SRCS
+src/turtlesim.cpp
+src/turtle.cpp
+src/turtle_frame.cpp
+)
+<span class="hljs-keyword">set</span>(turtlesim_node_HDRS
+<span class="hljs-keyword">include</span>/turtlesim/turtle_frame.h
+)
+<span class="hljs-comment">#&#x6307;&#x5B9A;turtlesim_node_SRCS&#x3001;turtlesim_node_HDRS&#x53D8;&#x91CF;</span>
+
+<span class="hljs-keyword">qt5_wrap_cpp</span>(turtlesim_node_MOCS <span class="hljs-variable">${turtlesim_node_HDRS}</span>)
+
+<span class="hljs-keyword">add_executable</span>(turtlesim_node <span class="hljs-variable">${turtlesim_node_SRCS}</span> <span class="hljs-variable">${turtlesim_node_MOCS}</span>)
+<span class="hljs-comment"># &#x6307;&#x5B9A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x76EE;&#x6807;turtlesim_node</span>
+<span class="hljs-keyword">target_link_libraries</span>(turtlesim_node Qt5::Widgets <span class="hljs-variable">${catkin_LIBRARIES}</span> <span class="hljs-variable">${Boost_LIBRARIES}</span>)
+<span class="hljs-comment"># &#x6307;&#x5B9A;&#x94FE;&#x63A5;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</span>
+<span class="hljs-keyword">add_dependencies</span>(turtlesim_node turtlesim_gencpp)
+
+<span class="hljs-keyword">add_executable</span>(turtle_teleop_key tutorials/teleop_turtle_key.cpp)
+<span class="hljs-keyword">target_link_libraries</span>(turtle_teleop_key <span class="hljs-variable">${catkin_LIBRARIES}</span>)
+<span class="hljs-keyword">add_dependencies</span>(turtle_teleop_key turtlesim_gencpp)
+
+<span class="hljs-keyword">add_executable</span>(draw_square tutorials/draw_square.cpp)
+<span class="hljs-keyword">target_link_libraries</span>(draw_square <span class="hljs-variable">${catkin_LIBRARIES}</span> <span class="hljs-variable">${Boost_LIBRARIES}</span>)
+<span class="hljs-keyword">add_dependencies</span>(draw_square turtlesim_gencpp)
+
+<span class="hljs-keyword">add_executable</span>(mimic tutorials/mimic.cpp)
+<span class="hljs-keyword">target_link_libraries</span>(mimic <span class="hljs-variable">${catkin_LIBRARIES}</span>)
+<span class="hljs-keyword">add_dependencies</span>(mimic turtlesim_gencpp)
+<span class="hljs-comment"># &#x540C;&#x6837;&#x6307;&#x5B9A;&#x53EF;&#x6267;&#x884C;&#x76EE;&#x6807;&#x3001;&#x94FE;&#x63A5;&#x3001;&#x4F9D;&#x8D56;</span>
+
+<span class="hljs-keyword">install</span>(TARGETS turtlesim_node turtle_teleop_key draw_square mimic
+RUNTIME DESTINATION <span class="hljs-variable">${CATKIN_PACKAGE_BIN_DESTINATION}</span>)
+<span class="hljs-comment"># &#x5B89;&#x88C5;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x5230;&#x672C;&#x5730;&#x7CFB;&#x7EDF;</span>
+
+<span class="hljs-keyword">install</span>(DIRECTORY images
+DESTINATION <span class="hljs-variable">${CATKIN_PACKAGE_SHARE_DESTINATION}</span>
+FILES_MATCHING PATTERN <span class="hljs-string">&quot;*.png&quot;</span> PATTERN <span class="hljs-string">&quot;*.svg&quot;</span>)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ROS-4.html" class="navigation navigation-prev " aria-label="Previous page: packages">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ROS-6.html" class="navigation navigation-next " aria-label="Next page: package.xml">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CMakeLists.txt","level":"1.2.5","depth":2,"next":{"title":"package.xml","level":"1.2.6","depth":2,"path":"ROS/ROS-6.md","ref":"ROS/ROS-6.md","articles":[]},"previous":{"title":"packages","level":"1.2.4","depth":2,"path":"ROS/ROS-4.md","ref":"ROS/ROS-4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/ROS-5.md","mtime":"2021-01-13T15:08:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-13T15:11:01.110Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
