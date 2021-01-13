@@ -35,8 +35,7 @@ sudo apt-get upgrade
 
 update是更新软件列表，upgrade是更新已安装的软件
 
-- 参考链接
-    - [apt-get update与upgrade的区别](https://www.jianshu.com/p/42a1850bdcf6)
+- 参考[apt-get update与upgrade的区别](https://www.jianshu.com/p/42a1850bdcf6)
 
 ## 5. 安装ROS
 
@@ -44,91 +43,91 @@ ros官方提供四种安装方式，Ubuntu16.04安装Kinetic版本
 
 - 桌面完整版安装
 
-    包括ROS、rqt、rviz、通用机器人函数库、2D/3D仿真器、导航以及2D/3D感知功能
+  包括ROS、rqt、rviz、通用机器人函数库、2D/3D仿真器、导航以及2D/3D感知功能
 
-    ```Bash
-    sudo apt-get install ros-kinetic-desktop-full
-    ```
+  ```Bash
+  sudo apt-get install ros-kinetic-desktop-full
+  ```
 
 - 桌面版安装
 
-    包含ROS、rqt、rviz以及通用机器人函数库
+  包含ROS、rqt、rviz以及通用机器人函数库
 
-    ```Bash
-    sudo apt-get install ros-kinetic-desktop
-    ```
+  ```Bash
+  sudo apt-get install ros-kinetic-desktop
+  ```
 
 - 基础版安装
 
-    包含ROS核心软件包、构建工具以及通信相关的程序库，无GUI工具
+  包含ROS核心软件包、构建工具以及通信相关的程序库，无GUI工具
 
-    ```Bash
-    sudo apt-get install ros-kinetic-ros-base
-    ```
+  ```Bash
+  sudo apt-get install ros-kinetic-ros-base
+  ```
 
 - 单独软件包安装
 
-    可以用来安装指定软件包，这种安装方式在运行ROS缺少某些package依赖时会经常用到。
+  可以用来安装指定软件包，这种安装方式在运行ROS缺少某些package依赖时会经常用到。
 
-    ```bash
-    sudo apt-get install ros-kinetic-PACKAGE
-    ```
+  ```bash
+  sudo apt-get install ros-kinetic-PACKAGE
+  ```
 
-    用包名替代上述命令中的`PACKAGE`可安装相应的功能包
+  用包名替代上述命令中的`PACKAGE`可安装相应的功能包
 
 ## 6. 配置ROS
 
-- 初始化rosdep
+### 6.1. 初始化rosdep
 
-    ```bash
-    sudo rosdep init
-    sudo rosdep update
-    ```
+```bash
+sudo rosdep init
+sudo rosdep update
+```
 
-    这里可能会因为github站点网络链接问题而报错，使用代理即可解决
+这里可能会因为github站点网络链接问题而报错，使用代理即可解决
 
-- ROS环境变量设置
+### 6.2. ROS环境变量设置
 
-    ```bash
-    echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-    ```
+```bash
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+```
 
-    相当于每次打开终端都执行遍`source`命令
+相当于每次打开终端都执行遍`source`命令
 
-- 安装rosinstall
+### 6.3. 安装rosinstall
 
-    ```bash
-    sudo apt-get install python-rosinstall
-    ```
+```bash
+sudo apt-get install python-rosinstall
+```
 
 ## 7. 测试ROS环境
 
-- 启动`roscore`
+### 7.1. 启动`roscore`
 
-    ```bash
-    roscore
-    ```
+```bash
+roscore
+```
 
-    成功启动后如下图所示
+成功启动后如下图所示
 
-    ![roscore](./imgs/roscore.jpg)
+![roscore](./imgs/roscore.jpg)
 
-- 启动海龟测试节点
+### 7.2. 启动海龟测试节点
 
-    ```bash
-    rosrun turtlesim turtlesim_node
-    ```
+```bash
+rosrun turtlesim turtlesim_node
+```
 
-    `turtlesim_node`节点是模拟海龟运动的节点
+`turtlesim_node`节点是模拟海龟运动的节点
 
-    ![turtlesim_node](./imgs/turtlesim_node.jpg)
+![turtlesim_node](./imgs/turtlesim_node.jpg)
 
-- 启动控制节点
+### 7.3. 启动控制节点
 
-    ```bash
-    rosrun turtlesim  turtle_teleop_key
-    ```
+```bash
+rosrun turtlesim  turtle_teleop_key
+```
 
-    `turtle_teleop_key`节点是键盘控制节点
+`turtle_teleop_key`节点是键盘控制节点
 
-    ![turtle_teleop_key](./imgs/turtle_teleop_key.jpg)
+![turtle_teleop_key](./imgs/turtle_teleop_key.jpg)
