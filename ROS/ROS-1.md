@@ -2,11 +2,11 @@
 
 ## 1. 版本选择
 
-|ROS版本|Ubuntu 版本|
-|-|-|
-|[ROS Kinetic Kame](http://wiki.ros.org/kinetic/Installation)|Ubuntu 16.04|
-|[ROS Melodic Morenia](http://wiki.ros.org/melodic/Installation)|Ubuntu 18.04|
-|[ROS Noetic Ninjemys](http://wiki.ros.org/noetic/Installation)|Ubuntu 20.04|
+| ROS版本 | Ubuntu 版本 |
+| :---: | :---: |
+| [ROS Kinetic Kame](http://wiki.ros.org/kinetic/Installation) | Ubuntu 16.04 |
+| [ROS Melodic Morenia](http://wiki.ros.org/melodic/Installation) | Ubuntu 18.04 |
+| [ROS Noetic Ninjemys](http://wiki.ros.org/noetic/Installation) | Ubuntu 20.04 |
 
 ros的各个版本之间不相互兼容，安装前需要注意版本对应
 
