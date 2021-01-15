@@ -18,7 +18,7 @@ Catkin 编译系统的层级结构如图
 
 相当于`catkin_make`是将cmake与make进行了合并操作，同时提高了跨项目依赖性
 
-### 1.2. 使用catkin_make进行编译
+### 1.2. 使用catkin\_make进行编译
 
 必须要在工作空间的目录下执行`catkin_make`，之后需要`source`命令更新环境变量，否则`rosrun`无法执行ros包
 
@@ -63,4 +63,5 @@ source ./devel/setup.bash
 `src/`下的源代码，经过编译生成中间文件，存在`build/`下，`build/`下的文件再经过链接等处理，最后生成可执行文件，库文件等，存放在`devel/`
 
 `src/`下允许存在多个package，在ROS工作空间下的各个package可以在子目录下
+
 ![catkin_ws](./imgs/catkin_ws.jpg)

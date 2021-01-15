@@ -113,26 +113,26 @@ ROS里常见的Metapacakge有：
 
 | Metapacakge名称 | 描述 | 链接 |
 | :------: | :------: | :------: |
-| navigation | 导航相关的功能包集 | https://github.com/ros-planning/navigation |
-| moveit | 运动规划相关的（主要是机械臂）功能包集  | https://github.com/ros-planning/moveit |
-| image_pipeline | 图像获取、处理相关的功能包集 | https://github.com/ros-perception/image_common |
-| vision_opencv | ROS与OpenCV交互的功能包集| https://github.com/ros-perception/vision_opencv |
-| turtlebot | Turtlebot机器人相关的功能包集 | https://github.com/turtlebot/turtlebot |
-| pr2_robot | pr2机器人驱动功能包集 | https://github.com/PR2/pr2_robot |
+| `navigation` | 导航相关的功能包集 | <https://github.com/ros-planning/navigation> |
+| `moveit` | 运动规划相关的（主要是机械臂）功能包集  | <https://github.com/ros-planning/moveit> |
+| `image_pipeline` | 图像获取、处理相关的功能包集 | <https://github.com/ros-perception/image_common> |
+| `vision_opencv` | ROS与OpenCV交互的功能包集| <https://github.com/ros-perception/vision_opencv> |
+| `turtlebot` | Turtlebot机器人相关的功能包集 | <https://github.com/turtlebot/turtlebot> |
+| `pr2_robot` | pr2机器人驱动功能包集 | <https://github.com/PR2/pr2_robot> |
 | ... | ...|...|
 
 以上列举了一些常见的功能包集，例如navigation、turtlebot，他们都是用于某一方面的功能，以navigation metapackage（官方介绍里仍然沿用stack的叫法）为例，它包括了以下软件包：
 
 | 包名 | 功能 |
 | :------: | :------: |
-| navigation | Metapacakge，依赖以下所有pacakge |
-| amcl | 定位 |
-| fake_localization | 定位 |
-| map_server | 提供地图 |
-| move_base | 路径规划节点 |
-| nav_core | 路径规划的接口类|
-| base_local_planner | 局部规划 |
-| dwa_local_planner| 局部规划|
+| `navigation` | Metapacakge，依赖以下所有pacakge |
+| `amcl` | 定位 |
+| `fake_localization` | 定位 |
+| `map_server` | 提供地图 |
+| `move_base` | 路径规划节点 |
+| `nav_core` | 路径规划的接口类|
+| `base_local_planner` | 局部规划 |
+| `dwa_local_planner`| 局部规划|
 | ... | ... | ... |
 
 ### 4.2. Metapackage结构
@@ -184,7 +184,7 @@ catkin_metapackage()   #声明本软件包是一个metapacakge
 
 metapacakge中的以上两个文件和普通pacakge不同点是：
 
-- `CMakeLists.txt`:加入了catkin_metapackage()宏，指定本软件包为一个metapacakge。
+- `CMakeLists.txt`:加入了`catkin_metapackage()`宏，指定本软件包为一个metapacakge。
 - `package.xml`:`<run_depend>`标签将所有软件包列为依赖项，`<export>`标签中添加`<metapackage>`标签声明。
 
 metapacakge在我们实际开发一个大工程时可能有用
