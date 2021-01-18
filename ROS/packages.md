@@ -133,7 +133,7 @@ ROS里常见的Metapacakge有：
 | `nav_core` | 路径规划的接口类|
 | `base_local_planner` | 局部规划 |
 | `dwa_local_planner`| 局部规划|
-| ... | ... | ... |
+| ... | ... |
 
 ### 4.2. Metapackage结构
 
