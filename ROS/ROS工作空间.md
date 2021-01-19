@@ -8,7 +8,7 @@ Catkin 是 ROS 对 CMake 进行拓展之后的，CMake 能够生成`makefile`文
 
 Catkin 编译系统的层级结构如图
 
-![catkin](./imgs/catkin.jpg)
+![catkin.jpg](./imgs/catkin.jpg)
 
 ### 1.1. Catkin编译流程
 
@@ -64,4 +64,4 @@ source ./devel/setup.bash
 
 `src/`下允许存在多个package，在ROS工作空间下的各个package可以在子目录下
 
-![catkin_ws](./imgs/catkin_ws.jpg)
+![catkin_ws.jpg](./imgs/catkin_ws.jpg)

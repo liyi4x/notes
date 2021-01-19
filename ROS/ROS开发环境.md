@@ -110,7 +110,7 @@ roscore
 
 成功启动后如下图所示
 
-![roscore](./imgs/roscore.jpg)
+![roscore.jpg](./imgs/roscore.jpg)
 
 ### 7.2. 启动海龟测试节点
 
@@ -120,7 +120,7 @@ rosrun turtlesim turtlesim_node
 
 `turtlesim_node`节点是模拟海龟运动的节点
 
-![turtlesim_node](./imgs/turtlesim_node.jpg)
+![turtlesim_node.jpg](./imgs/turtlesim_node.jpg)
 
 ### 7.3. 启动控制节点
 
@@ -130,4 +130,4 @@ rosrun turtlesim  turtle_teleop_key
 
 `turtle_teleop_key`节点是键盘控制节点
 
-![turtle_teleop_key](./imgs/turtle_teleop_key.jpg)
+![turtle_teleop_key.jpg](./imgs/turtle_teleop_key.jpg)
