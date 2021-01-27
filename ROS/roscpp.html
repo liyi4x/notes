@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>ROS · Notes</title>
+        <title>roscpp · Notes</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="ROS开发环境.html" />
+    <link rel="next" href="init以及NodeHandle.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="Parameter-server.html" />
     
 
     </head>
@@ -114,7 +114,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -296,7 +296,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="roscpp.html">
+        <li class="chapter active" data-level="1.2.6" data-path="roscpp.html">
             
                 <a href="roscpp.html">
             
@@ -368,7 +368,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >ROS</a>
+        <a href=".." >roscpp</a>
     </h1>
 </div>
 
@@ -383,7 +383,30 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="ros&#x673A;&#x5668;&#x4EBA;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;">ROS&#x673A;&#x5668;&#x4EBA;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</h1>
+                                <h1 id="roscpp">roscpp</h1>
+<h2 id="1-client-library&#x7B80;&#x4ECB;">1. Client Library&#x7B80;&#x4ECB;</h2>
+<p>ROS&#x4E3A;&#x673A;&#x5668;&#x4EBA;&#x5F00;&#x53D1;&#x8005;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E0D;&#x540C;&#x8BED;&#x8A00;&#x7684;&#x7F16;&#x7A0B;&#x63A5;&#x53E3;&#xFF0C;&#x6BD4;&#x5982;C++&#x63A5;&#x53E3;&#x53EB;&#x505A;roscpp&#xFF0C;Python&#x63A5;&#x53E3;&#x53EB;&#x505A;rospy&#xFF0C;Java&#x63A5;&#x53E3;&#x53EB;&#x505A;rosjava&#x3002;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;topic&#x3001;service&#x3001;param&#xFF0C;&#x5B9E;&#x73B0;ROS&#x7684;&#x901A;&#x4FE1;&#x529F;&#x80FD;&#x3002;Clinet Lirary&#x6709;&#x70B9;&#x7C7B;&#x4F3C;&#x5F00;&#x53D1;&#x4E2D;&#x7684;Helper Class&#xFF0C;&#x628A;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x57FA;&#x672C;&#x529F;&#x80FD;&#x505A;&#x4E86;&#x5C01;&#x88C5;&#x3002;</p>
+<p>&#x4ECE;&#x5F00;&#x53D1;&#x5BA2;&#x6237;&#x7AEF;&#x5E93;&#x7684;&#x89D2;&#x5EA6;&#x770B;&#xFF0C;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x5E93;&#xFF0C;&#x81F3;&#x5C11;&#x9700;&#x8981;&#x80FD;&#x591F;&#x5305;&#x62EC;master&#x6CE8;&#x518C;&#x3001;&#x540D;&#x79F0;&#x7BA1;&#x7406;&#x3001;&#x6D88;&#x606F;&#x6536;&#x53D1;&#x7B49;&#x529F;&#x80FD;&#x3002;&#x8FD9;&#x6837;&#x624D;&#x80FD;&#x7ED9;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4F9B;&#x5BF9;ROS&#x901A;&#x4FE1;&#x67B6;&#x6784;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p><img src="imgs/ros_pkgs.jpg" alt="ros_pkgs.png"></p>
+<h2 id="2-roscpp&#x7B80;&#x4ECB;">2. roscpp&#x7B80;&#x4ECB;</h2>
+<p>roscpp&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;C++&#x5E93;&#xFF0C;&#x8FD9;&#x4E2A;&#x5E93;&#x5305;&#x62EC;&#x4E86;ROS&#x8282;&#x70B9;&#x7684;&#x5404;&#x79CD;&#x529F;&#x80FD;&#x5B9E;&#x73B0;&#xFF0C;roscpp&#x4F4D;&#x4E8E;<code>/opt/ros/kinetic</code>&#x4E4B;&#x4E0B;&#xFF0C;&#x7528;C++&#x5B9E;&#x73B0;&#x4E86;ROS&#x901A;&#x4FE1;&#x3002;&#x5728;ROS&#x4E2D;&#xFF0C;C++&#x7684;&#x4EE3;&#x7801;&#x662F;&#x901A;&#x8FC7;<code>catkin</code>&#x8FD9;&#x4E2A;&#x7F16;&#x8BD1;&#x7CFB;&#x7EDF;&#xFF08;&#x6269;&#x5C55;&#x7684;CMake&#xFF09;&#x6765;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#x6784;&#x5EFA;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;CMake&#x5DE5;&#x7A0B;&#xFF0C;&#x5728;&#x5176;&#x4E2D;include&#x4E86;roscpp&#x7B49;ROS&#x7684;libraries&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x5DE5;&#x7A0B;&#x4E2D;&#x4F7F;&#x7528;ROS&#x63D0;&#x4F9B;&#x7684;&#x51FD;&#x6570;&#x4E86;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x91CC;&#x5305;&#x542B;&#x4E86;&#x6240;&#x6709;roscpp&#x76F8;&#x5173;&#x7684;&#x5934;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ros/ros.h&gt;</span></span>
+</code></pre>
+<p>roscpp&#x5305;&#x542B;&#x7684;&#x51E0;&#x4E2A;&#x90E8;&#x5206;&#x5982;&#x4E0B;</p>
+<ul>
+<li><code>ros::init_options</code>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5305;&#x542B;&#x8282;&#x70B9;&#x521D;&#x59CB;&#x5316;&#x7B49;&#x529F;&#x80FD;&#x6027;&#x7684;&#x51FD;&#x6570;<ul>
+<li>&#x5305;&#x542B;<code>ros::init()</code>&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#xFF0C;&#x6709;&#x4E09;&#x4E2A;&#x91CD;&#x8F7D;&#xFF0C;&#x5728;&#x4F7F;&#x7528;ROS&#x7CFB;&#x7EDF;&#x76F8;&#x5173;&#x529F;&#x80FD;&#x4E4B;&#x524D;&#x5FC5;&#x987B;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;</li>
+</ul>
+</li>
+<li><code>ros::NodeHandle</code>&#x7C7B;&#xFF0C;&#x53E5;&#x67C4;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x548C;topic&#x3001;service&#x3001;param&#x7B49;&#x4EA4;&#x4E92;&#x7684;&#x516C;&#x5171;&#x63A5;&#x53E3;</li>
+<li><code>ros::master</code>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5305;&#x542B;&#x4ECE;master&#x67E5;&#x8BE2;&#x4FE1;&#x606F;&#x7684;&#x51FD;&#x6570;</li>
+<li><code>ros::this_node</code>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5305;&#x542B;&#x67E5;&#x8BE2;&#x8FD9;&#x4E2A;node&#x7684;&#x51FD;&#x6570;</li>
+<li><code>ros::service</code>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5305;&#x542B;&#x67E5;&#x8BE2;&#x670D;&#x52A1;&#x7684;&#x51FD;&#x6570;</li>
+<li><code>ros::param</code>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5305;&#x542B;&#x67E5;&#x8BE2;&#x53C2;&#x6570;&#x670D;&#x52A1;&#x5668;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x7528;&#x5230;NodeHandle</li>
+<li><code>ros::names</code>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5305;&#x542B;&#x5904;&#x7406;ROS&#x56FE;&#x8D44;&#x6E90;&#x540D;&#x79F0;&#x7684;&#x51FD;&#x6570;</li>
+</ul>
+<p>&#x5173;&#x4E8E;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;&#x53C2;&#x8003;<a href="http://docs.ros.org/api/roscpp/html/index.html" target="_blank">&#x5B98;&#x65B9;wiki</a></p>
 
                                 
                                 </section>
@@ -411,12 +434,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="Parameter-server.html" class="navigation navigation-prev " aria-label="Previous page: Parameter server">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="ROS开发环境.html" class="navigation navigation-next " aria-label="Next page: ROS开发环境">
+                <a href="init以及NodeHandle.html" class="navigation navigation-next " aria-label="Next page: init以及NodeHandle">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -427,7 +450,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ROS","level":"1.2","depth":1,"next":{"title":"ROS开发环境","level":"1.2.1","depth":2,"path":"ROS/ROS开发环境.md","ref":"./ROS/ROS开发环境.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/README.md","mtime":"2021-01-12T20:31:56.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-27T19:37:27.416Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"roscpp","level":"1.2.6","depth":2,"next":{"title":"init以及NodeHandle","level":"1.2.6.1","depth":3,"path":"ROS/init以及NodeHandle.md","ref":"./ROS/init以及NodeHandle.md","articles":[]},"previous":{"title":"Parameter server","level":"1.2.5.5","depth":3,"path":"ROS/Parameter-server.md","ref":"./ROS/Parameter-server.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/roscpp.md","mtime":"2021-01-27T19:35:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-27T19:37:27.416Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

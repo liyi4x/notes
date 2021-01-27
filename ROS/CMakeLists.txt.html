@@ -296,6 +296,51 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.6" data-path="roscpp.html">
+            
+                <a href="roscpp.html">
+            
+                    
+                    roscpp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="init以及NodeHandle.html">
+            
+                <a href="init以及NodeHandle.html">
+            
+                    
+                    init以及NodeHandle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="topic-in-roscpp.html">
+            
+                <a href="topic-in-roscpp.html">
+            
+                    
+                    topic in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -340,9 +385,10 @@
                                 
                                 <h1 id="cmakeliststxt">CMakeLists.txt</h1>
 <p><code>CMakeLists.txt</code>&#x539F;&#x672C;&#x662F;Cmake&#x7F16;&#x8BD1;&#x7CFB;&#x7EDF;&#x7684;&#x89C4;&#x5219;&#x6587;&#x4EF6;&#xFF0C;&#x800C;Catkin&#x7F16;&#x8BD1;&#x7CFB;&#x7EDF;&#x57FA;&#x672C;&#x6CBF;&#x7528;&#x4E86;CMake&#x7684;&#x7F16;&#x8BD1;&#x98CE;&#x683C;&#xFF0C;&#x53EA;&#x662F;&#x9488;&#x5BF9;ROS&#x5DE5;&#x7A0B;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E9B;&#x5B8F;&#x5B9A;&#x4E49;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x5199;&#x6CD5;&#x4E0A;&#xFF0C;catkin&#x7684;<code>CMakeLists.txt</code>&#x4E0E;CMake&#x7684;&#x57FA;&#x672C;&#x4E00;&#x81F4;&#x3002;</p>
-<p>CMake&#x53C2;&#x8003;&#x4E66;</p>
+<p>CMake&#x53C2;&#x8003;&#x8D44;&#x6599;</p>
 <ul>
-<li><a href="https://github.com/Akagi201/learning-cmake/blob/master/docs/cmake-practice.pdf" target="_blank">cmake-practice</a></li>
+<li><a href="https://github.com/Akagi201/learning-cmake/blob/master/docs/cmake-practice.pdf" target="_blank">cmake-practice.pdf</a></li>
+<li><a href="https://dlonng.com/posts/ros-cmakelist" target="_blank">&#x89E3;&#x6790;CMakeList.txt&#x6587;&#x4EF6;</a></li>
 </ul>
 <p>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x76F4;&#x63A5;&#x89C4;&#x5B9A;&#x4E86;&#x8FD9;&#x4E2A;package&#x8981;&#x4F9D;&#x8D56;&#x54EA;&#x4E9B;package&#xFF0C;&#x8981;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x54EA;&#x4E9B;&#x76EE;&#x6807;&#xFF0C;&#x5982;&#x4F55;&#x7F16;&#x8BD1;&#x7B49;&#x7B49;&#x6D41;&#x7A0B;&#x3002;&#x6240;&#x4EE5;<code>CMakeLists.txt</code>&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF0C;&#x5B83;&#x6307;&#x5B9A;&#x4E86;&#x7531;&#x6E90;&#x7801;&#x5230;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x89C4;&#x5219;&#xFF0C;catkin&#x7F16;&#x8BD1;&#x7CFB;&#x7EDF;&#x5728;&#x5DE5;&#x4F5C;&#x65F6;&#x9996;&#x5148;&#x4F1A;&#x627E;&#x5230;&#x6BCF;&#x4E2A;package&#x4E0B;&#x7684;<code>CMakeLists.txt</code>&#xFF0C;&#x7136;&#x540E;&#x6309;&#x7167;&#x89C4;&#x5219;&#x6765;&#x7F16;&#x8BD1;&#x6784;&#x5EFA;&#x3002;</p>
 <h2 id="turtlesim&#x7684;cmakelists">turtlesim&#x7684;CMakeLists</h2>
@@ -353,12 +399,24 @@
 <span class="hljs-keyword">project</span>(turtlesim)
 <span class="hljs-comment">#&#x9879;&#x76EE;(package)&#x540D;&#x79F0;&#x4E3A;turtlesim&#xFF0C;&#x5728;&#x540E;&#x7EED;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x4F7F;&#x7528;&#x53D8;&#x91CF;${PROJECT_NAME}&#x6765;&#x5F15;&#x7528;&#x9879;&#x76EE;&#x540D;&#x79F0;turltesim</span>
 
-<span class="hljs-keyword">find_package</span>(catkin REQUIRED COMPONENTS geometry_msgs message_generation rosconsole roscpp roscpp_serialization roslib rostime std_msgs std_srvs)
+<span class="hljs-keyword">find_package</span>(catkin REQUIRED COMPONENTS
+    geometry_msgs
+    message_generation
+    rosconsole
+    roscpp
+    roscpp_serialization
+    roslib
+    rostime
+    std_msgs
+    std_srvs
+)
 <span class="hljs-comment">#cmake&#x5B8F;&#xFF0C;&#x6307;&#x5B9A;&#x4F9D;&#x8D56;&#x7684;&#x5176;&#x4ED6;pacakge&#xFF0C;&#x5B9E;&#x9645;&#x662F;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E9B;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5982;&lt;NAME&gt;_FOUND, &lt;NAME&gt;_INCLUDE_DIRS, &lt;NAME&gt;_LIBRARYIS</span>
 <span class="hljs-comment">#&#x6B64;&#x5904;catkin&#x662F;&#x5FC5;&#x5907;&#x4F9D;&#x8D56; &#x5176;&#x4F59;&#x7684;geometry_msgs...&#x4E3A;&#x7EC4;&#x4EF6;</span>
 
 <span class="hljs-keyword">find_package</span>(Qt5Widgets REQUIRED)
-<span class="hljs-keyword">find_package</span>(Boost REQUIRED COMPONENTS thread)
+<span class="hljs-keyword">find_package</span>(Boost REQUIRED COMPONENTS 
+    thread
+)
 
 <span class="hljs-keyword">include_directories</span>(<span class="hljs-keyword">include</span> <span class="hljs-variable">${catkin_INCLUDE_DIRS}</span> <span class="hljs-variable">${Boost_INCLUDE_DIRS}</span>)
 <span class="hljs-comment">#&#x6307;&#x5B9A;C++&#x7684;&#x5934;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</span>
@@ -366,22 +424,29 @@
 <span class="hljs-comment">#&#x6307;&#x5B9A;&#x94FE;&#x63A5;&#x5E93;&#x7684;&#x8DEF;&#x5F84;</span>
 
 add_message_files(DIRECTORY msg FILES
-Color.msg
-Pose.msg)
+    Color.msg
+    Pose.msg
+)
 <span class="hljs-comment">#&#x81EA;&#x5B9A;&#x4E49;msg&#x6587;&#x4EF6;</span>
 
 add_service_files(DIRECTORY srv FILES
-Kill.srv
-SetPen.srv
-Spawn.srv
-TeleportAbsolute.srv
-TeleportRelative.srv)
+    Kill.srv
+    SetPen.srv
+    Spawn.srv
+    TeleportAbsolute.srv
+    TeleportRelative.srv
+)
 <span class="hljs-comment">#&#x81EA;&#x5B9A;&#x4E49;srv&#x6587;&#x4EF6;</span>
 
 generate_messages(DEPENDENCIES geometry_msgs std_msgs std_srvs)
 <span class="hljs-comment">#&#x5728;add_message_files&#x3001;add_service_files&#x5B8F;&#x4E4B;&#x540E;&#x5FC5;&#x987B;&#x52A0;&#x4E0A;&#x8FD9;&#x53E5;&#x8BDD;&#xFF0C;&#x7528;&#x4E8E;&#x751F;&#x6210;srv msg&#x5934;&#x6587;&#x4EF6;/module&#xFF0C;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x4F4D;&#x4E8E;devel/include&#x4E2D;</span>
 
-catkin_package(CATKIN_DEPENDS geometry_msgs message_runtime std_msgs std_srvs)
+catkin_package(CATKIN_DEPENDS 
+    geometry_msgs
+    message_runtime
+    std_msgs
+    std_srvs
+)
 <span class="hljs-comment"># catkin&#x5B8F;&#x547D;&#x4EE4;&#xFF0C;&#x7528;&#x4E8E;&#x914D;&#x7F6E;ROS&#x7684;package&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x548C;CMake&#x6587;&#x4EF6;</span>
 <span class="hljs-comment"># &#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x5FC5;&#x987B;&#x5728;add_library()&#x6216;&#x8005;add_executable()&#x4E4B;&#x524D;&#x8C03;&#x7528;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x6709;5&#x4E2A;&#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF1A;</span>
 <span class="hljs-comment"># (1) INCLUDE_DIRS - &#x5BFC;&#x51FA;&#x5305;&#x7684;include&#x8DEF;&#x5F84;</span>
@@ -391,12 +456,12 @@ catkin_package(CATKIN_DEPENDS geometry_msgs message_runtime std_msgs std_srvs)
 <span class="hljs-comment"># (5) CFG_EXTRAS - &#x5176;&#x4ED6;&#x914D;&#x7F6E;&#x9009;&#x9879;</span>
 
 <span class="hljs-keyword">set</span>(turtlesim_node_SRCS
-src/turtlesim.cpp
-src/turtle.cpp
-src/turtle_frame.cpp
+    src/turtlesim.cpp
+    src/turtle.cpp
+    src/turtle_frame.cpp
 )
 <span class="hljs-keyword">set</span>(turtlesim_node_HDRS
-<span class="hljs-keyword">include</span>/turtlesim/turtle_frame.h
+    <span class="hljs-keyword">include</span>/turtlesim/turtle_frame.h
 )
 <span class="hljs-comment">#&#x6307;&#x5B9A;turtlesim_node_SRCS&#x3001;turtlesim_node_HDRS&#x53D8;&#x91CF;</span>
 
@@ -472,7 +537,7 @@ FILES_MATCHING PATTERN <span class="hljs-string">&quot;*.png&quot;</span> PATTER
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CMakeLists.txt","level":"1.2.4.2","depth":3,"next":{"title":"ROS通信架构","level":"1.2.5","depth":2,"path":"ROS/ROS通信架构.md","ref":"./ROS/ROS通信架构.md","articles":[{"title":"Launch文件","level":"1.2.5.1","depth":3,"path":"ROS/Launch文件.md","ref":"./ROS/Launch文件.md","articles":[]},{"title":"Topic和msg","level":"1.2.5.2","depth":3,"path":"ROS/Topic和msg.md","ref":"./ROS/Topic和msg.md","articles":[]},{"title":"Service和srv","level":"1.2.5.3","depth":3,"path":"ROS/Service和srv.md","ref":"./ROS/Service和srv.md","articles":[]},{"title":"Action","level":"1.2.5.4","depth":3,"path":"ROS/Action.md","ref":"./ROS/Action.md","articles":[]},{"title":"Parameter server","level":"1.2.5.5","depth":3,"path":"ROS/Parameter-server.md","ref":"./ROS/Parameter-server.md","articles":[]}]},"previous":{"title":"package.xml","level":"1.2.4.1","depth":3,"path":"ROS/package.xml.md","ref":"./ROS/package.xml.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/CMakeLists.txt.md","mtime":"2021-01-18T15:42:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-19T17:48:43.757Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CMakeLists.txt","level":"1.2.4.2","depth":3,"next":{"title":"ROS通信架构","level":"1.2.5","depth":2,"path":"ROS/ROS通信架构.md","ref":"./ROS/ROS通信架构.md","articles":[{"title":"Launch文件","level":"1.2.5.1","depth":3,"path":"ROS/Launch文件.md","ref":"./ROS/Launch文件.md","articles":[]},{"title":"Topic和msg","level":"1.2.5.2","depth":3,"path":"ROS/Topic和msg.md","ref":"./ROS/Topic和msg.md","articles":[]},{"title":"Service和srv","level":"1.2.5.3","depth":3,"path":"ROS/Service和srv.md","ref":"./ROS/Service和srv.md","articles":[]},{"title":"Action","level":"1.2.5.4","depth":3,"path":"ROS/Action.md","ref":"./ROS/Action.md","articles":[]},{"title":"Parameter server","level":"1.2.5.5","depth":3,"path":"ROS/Parameter-server.md","ref":"./ROS/Parameter-server.md","articles":[]}]},"previous":{"title":"package.xml","level":"1.2.4.1","depth":3,"path":"ROS/package.xml.md","ref":"./ROS/package.xml.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/CMakeLists.txt.md","mtime":"2021-01-27T19:35:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-27T19:37:27.416Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
