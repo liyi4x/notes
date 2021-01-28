@@ -1,0 +1,620 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>service in roscpp · Notes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Liyi">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="topic-in-roscpp.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ROS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="ROS开发环境.html">
+            
+                <a href="ROS开发环境.html">
+            
+                    
+                    ROS开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="二进制包和源码包.html">
+            
+                <a href="二进制包和源码包.html">
+            
+                    
+                    二进制包和源码包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="ROS工作空间.html">
+            
+                <a href="ROS工作空间.html">
+            
+                    
+                    ROS工作空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="packages.html">
+            
+                <a href="packages.html">
+            
+                    
+                    packages
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="package.xml.html">
+            
+                <a href="package.xml.html">
+            
+                    
+                    package.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="CMakeLists.txt.html">
+            
+                <a href="CMakeLists.txt.html">
+            
+                    
+                    CMakeLists.txt
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="ROS通信架构.html">
+            
+                <a href="ROS通信架构.html">
+            
+                    
+                    ROS通信架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="Launch文件.html">
+            
+                <a href="Launch文件.html">
+            
+                    
+                    Launch文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="Topic和msg.html">
+            
+                <a href="Topic和msg.html">
+            
+                    
+                    Topic和msg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="Service和srv.html">
+            
+                <a href="Service和srv.html">
+            
+                    
+                    Service和srv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="Action.html">
+            
+                <a href="Action.html">
+            
+                    
+                    Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="Parameter-server.html">
+            
+                <a href="Parameter-server.html">
+            
+                    
+                    Parameter server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="roscpp.html">
+            
+                <a href="roscpp.html">
+            
+                    
+                    roscpp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="init以及NodeHandle.html">
+            
+                <a href="init以及NodeHandle.html">
+            
+                    
+                    init以及NodeHandle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="topic-in-roscpp.html">
+            
+                <a href="topic-in-roscpp.html">
+            
+                    
+                    topic in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.6.3" data-path="service-in-roscpp.html">
+            
+                <a href="service-in-roscpp.html">
+            
+                    
+                    service in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >service in roscpp</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="service-in-roscpp">service in roscpp</h1>
+<p><a href="Service&#x548C;srv.html">Service&#x548C;srv&#x76F8;&#x5173;&#x89E3;&#x91CA;</a></p>
+<p>&#x4EE5;<code>service_demo</code>&#x4E3A;&#x4F8B;&#xFF0C;&#x5B9A;&#x4E49;<code>Greeting.srv</code>&#x670D;&#x52A1;&#xFF0C;&#x63A5;&#x6536;&#x59D3;&#x540D;&#x548C;&#x5E74;&#x9F84;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x53D1;&#x51FA;&#x670D;&#x52A1;&#x8BF7;&#x6C42;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF0C;&#x8FD4;&#x56DE;&#x95EE;&#x5019;&#x8BED;</p>
+<h2 id="1-&#x521B;&#x5EFA;&#x670D;&#x52A1;">1. &#x521B;&#x5EFA;&#x670D;&#x52A1;</h2>
+<h3 id="11-greetingsrv&#x6587;&#x4EF6;">1.1. <code>Greeting.srv</code>&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-text">string name        #&#x77ED;&#x6A2A;&#x7EBF;&#x4E0A;&#x8FB9;&#x90E8;&#x5206;&#x662F;&#x670D;&#x52A1;&#x8BF7;&#x6C42;&#x7684;&#x6570;&#x636E;
+int32 age          
+---                #&#x77ED;&#x6A2A;&#x7EBF;&#x4E0B;&#x9762;&#x662F;&#x670D;&#x52A1;&#x56DE;&#x4F20;&#x7684;&#x5185;&#x5BB9;&#x3002;
+string feedback
+</code></pre>
+<ul>
+<li>&#x5BF9;&#x4E8E;<code>Greeting.srv</code>&#x800C;&#x8A00;&#xFF0C;&#x6700;&#x7EC8;&#x4E5F;&#x88AB;&#x7F16;&#x8BD1;&#x6210;<code>Greeting</code>&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5728;<code>service_demo</code>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;</li>
+<li>&#x670D;&#x52A1;&#x7684;&#x4E24;&#x90E8;&#x5206;<code>Request</code>&#x548C;<code>Response</code>&#x662F;&#x4E24;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5E76;&#x4E14;&#x88AB;&#x5D4C;&#x5957;&#x5728;<code>Greeting</code>&#x7ED3;&#x6784;&#x4F53;&#x4E0B;</li>
+</ul>
+<h2 id="2-&#x521B;&#x5EFA;&#x8282;&#x70B9;">2. &#x521B;&#x5EFA;&#x8282;&#x70B9;</h2>
+<h3 id="21-server&#x8282;&#x70B9;">2.1. server&#x8282;&#x70B9;</h3>
+<p><code>service_demo/src/server.cpp</code>&#x6587;&#x4EF6;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;ros/ros.h&quot;</span></span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;service_demo/Greeting.h&quot;</span></span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;string&quot;</span></span>
+
+<span class="hljs-comment">// &#x5B9A;&#x4E49;&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">handle_function</span><span class="hljs-params">(service_demo::Greeting::Request &amp;req, service_demo::Greeting::Response &amp;res)</span>
+</span>{
+    <span class="hljs-comment">// &#x6B64;&#x5904;&#x6211;&#x4EEC;&#x5BF9;&#x8BF7;&#x6C42;&#x76F4;&#x63A5;&#x8F93;&#x51FA;</span>
+    ROS_INFO(<span class="hljs-string">&quot;Request from %s with age %d &quot;</span>, req.name.c_str(), req.age);
+
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x53CD;&#x9988;&#xFF0C;&#x5C06;response&#x8BBE;&#x7F6E;&#x4E3A;&quot;...&quot;</span>
+    res.feedback = <span class="hljs-string">&quot;Hi &quot;</span> + req.name + <span class="hljs-string">&quot;. I&apos;m server!&quot;</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> **argv)</span>
+</span>{
+    <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x8282;&#x70B9;&#xFF0C;&#x547D;&#x540D;&#x4E3A;&quot;greetings_server&quot;</span>
+    ros::init(argc, argv, <span class="hljs-string">&quot;greetings_server&quot;</span>);
+
+    <span class="hljs-comment">// &#x5B9A;&#x4E49;service&#x7684;server&#x7AEF;&#xFF0C;service&#x540D;&#x79F0;&#x4E3A;&#x201C;greetings&#x201D;&#xFF0C;&#x6536;&#x5230;request&#x8BF7;&#x6C42;&#x4E4B;&#x540E;&#x4F20;&#x9012;&#x7ED9;handle_function&#x8FDB;&#x884C;&#x5904;&#x7406;</span>
+    ros::NodeHandle nh;
+    ros::ServiceServer service = nh.advertiseService(<span class="hljs-string">&quot;greetings&quot;</span>, handle_function);
+
+    <span class="hljs-comment">// &#x8C03;&#x7528;&#x53EF;</span>
+    ros::spin();
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<ul>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF0C;&#x901A;&#x8FC7;<code>nh</code>&#x53E5;&#x67C4;&#x521B;&#x5EFA;<code>service</code>&#xFF0C;<code>advertiseService()</code>&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x670D;&#x52A1;&#x540D;&#x548C;&#x5904;&#x7406;&#x51FD;&#x6570;</li>
+<li>&#x5F53;<code>server</code>&#x8282;&#x70B9;&#x6536;&#x5230;&#x670D;&#x52A1;&#x8BF7;&#x6C42;&#x65F6;&#x4F1A;&#x8C03;&#x7528;<code>handle_function()</code></li>
+<li><code>handle_function()</code>&#x7684;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x662F;<code>Greeting</code>&#x7684;<code>Request</code>&#x548C;<code>Response</code>&#x4E24;&#x90E8;&#x5206;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x5E03;&#x5C14;&#x578B;&#xFF0C;&#x662F;&#x5426;&#x6210;&#x529F;&#x6267;&#x884C;</li>
+<li>&#x9700;&#x8981;&#x8C03;&#x7528;<code>ros::spin();</code>&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x961F;&#x5217;&#x5904;&#x7406;</li>
+</ul>
+<h3 id="22-client&#x8282;&#x70B9;">2.2. client&#x8282;&#x70B9;</h3>
+<p><code>service_demo/src/client.cpp</code>&#x6587;&#x4EF6;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;ros/ros.h&quot;</span></span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;service_demo/Greeting.h&quot;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> **argv)</span>
+</span>{
+    <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#xFF0C;&#x8282;&#x70B9;&#x547D;&#x540D;&#x4E3A;&quot;greetings_client&quot;</span>
+    ros::init(argc, argv, <span class="hljs-string">&quot;greetings_client&quot;</span>);
+
+    <span class="hljs-comment">// &#x5B9A;&#x4E49;service&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;service&#x540D;&#x5B57;&#x4E3A;&#x201C;greetings&#x201D;&#xFF0C;service&#x7C7B;&#x578B;&#x4E3A;service_demo</span>
+    ros::NodeHandle nh;
+    ros::ServiceClient client = nh.serviceClient&lt;service_demo::Greeting&gt;(<span class="hljs-string">&quot;greetings&quot;</span>);
+
+    <span class="hljs-comment">// &#x5B9E;&#x4F8B;&#x5316;srv&#xFF0C;&#x8BBE;&#x7F6E;&#x5176;request&#x6D88;&#x606F;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x8FD9;&#x91CC;request&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;name&#x548C;age&#xFF0C;&#x89C1;Greeting.srv</span>
+    service_demo::Greeting srv;
+    srv.request.name = <span class="hljs-string">&quot;HAN&quot;</span>;
+    srv.request.age = <span class="hljs-number">20</span>;
+
+    <span class="hljs-keyword">if</span> (client.call(srv))
+    {
+        <span class="hljs-comment">// &#x6CE8;&#x610F;&#x6211;&#x4EEC;&#x7684;response&#x90E8;&#x5206;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x53EA;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;response&#xFF0C;&#x53E6;&#xFF0C;&#x6CE8;&#x610F;&#x5C06;&#x5176;&#x8F6C;&#x53D8;&#x6210;&#x5B57;&#x7B26;&#x4E32;</span>
+        ROS_INFO(<span class="hljs-string">&quot;Response from server: %s&quot;</span>, srv.response.feedback.c_str());
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        ROS_ERROR(<span class="hljs-string">&quot;Failed to call service Service_demo&quot;</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<ul>
+<li>&#x901A;&#x8FC7;nh&#x53E5;&#x67C4;&#x521B;&#x5EFA;<code>ros::ServiceClient</code>&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x7ED3;&#x6784;&#x4F53;&#x548C;&#x670D;&#x52A1;&#x540D;&#xFF0C;&#x8FD9;&#x91CC;&#x8BF4;&#x7684;&#x670D;&#x52A1;&#x540D;&#x662F;<code>server</code>&#x8282;&#x70B9;&#x5728;&#x521B;&#x5EFA;&#x670D;&#x52A1;&#x7684;&#x65F6;&#x5019;&#x8D77;&#x7684;&#x540D;&#x5B57;</li>
+<li>&#x901A;&#x8FC7;<code>client.call()</code>&#x8BF7;&#x6C42;&#x670D;&#x52A1;&#xFF0C;&#x53C2;&#x6570;&#x4E3A;<code>service_demo::Greeting</code>&#x7684;&#x5B9E;&#x4F8B;</li>
+<li><code>srv.response.feedback</code>&#x662F;string&#x7C7B;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x8F93;&#x51FA;&#x65F6;&#x901A;&#x8FC7;<code>c_str()</code>&#x6210;&#x5458;&#x51FD;&#x6570;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x3002;&#x53C2;&#x8003;<a href="https://blog.csdn.net/JIEJINQUANIL/article/details/51547027" target="_blank">C++&#x4E2D;c_str()&#x51FD;&#x6570;&#x7684;&#x7528;&#x6CD5;</a></li>
+</ul>
+<h2 id="3-&#x9879;&#x76EE;&#x7ED3;&#x6784;&#x6587;&#x4EF6;">3. &#x9879;&#x76EE;&#x7ED3;&#x6784;&#x6587;&#x4EF6;</h2>
+<h3 id="31-cmakeliststxt">3.1. <code>CMakeLists.txt</code></h3>
+<pre><code class="lang-cmake"><span class="hljs-keyword">cmake_minimum_required</span>(VERSION <span class="hljs-number">2.8</span>.<span class="hljs-number">3</span>)
+<span class="hljs-keyword">project</span>(service_demo)
+
+<span class="hljs-keyword">find_package</span>(catkin REQUIRED COMPONENTS
+    roscpp
+    std_msgs
+    message_generation   <span class="hljs-comment"># &#x9700;&#x8981;&#x6DFB;&#x52A0;&#x7684;&#x5730;&#x65B9;</span>
+)
+
+add_service_files(
+   FILES
+   Greeting.srv
+)
+
+generate_messages(DEPENDENCIES 
+    std_msgs
+)
+
+<span class="hljs-keyword">include_directories</span>(
+  <span class="hljs-keyword">include</span>
+  <span class="hljs-variable">${catkin_INCLUDE_DIRS}</span>
+)
+
+<span class="hljs-keyword">add_executable</span>(server src/server.cpp)
+<span class="hljs-keyword">add_dependencies</span>(server <span class="hljs-variable">${${PROJECT_NAME}</span>_EXPORTED_TARGETS} <span class="hljs-variable">${catkin_EXPORTED_TARGETS}</span>)
+<span class="hljs-keyword">target_link_libraries</span>(server <span class="hljs-variable">${catkin_LIBRARIES}</span>)
+
+<span class="hljs-keyword">add_executable</span>(client src/client.cpp)
+<span class="hljs-keyword">add_dependencies</span>(client <span class="hljs-variable">${${PROJECT_NAME}</span>_EXPORTED_TARGETS} <span class="hljs-variable">${catkin_EXPORTED_TARGETS}</span>)
+<span class="hljs-keyword">target_link_libraries</span>(client <span class="hljs-variable">${catkin_LIBRARIES}</span>)
+</code></pre>
+<ul>
+<li>&#x548C;&#x6D88;&#x606F;&#x4E00;&#x6837;&#xFF0C;&#x65B0;&#x5EFA;&#x670D;&#x52A1;&#x4E5F;&#x9700;&#x8981;<code>generate_messages()</code>&#x5426;&#x5219;&#x5728;&#x4EE3;&#x7801;&#x4E2D;<code>greeting.h</code>&#x5934;&#x6587;&#x4EF6;&#x4F1A;&#x62A5;&#x9519;</li>
+</ul>
+<h3 id="32-packagesxml">3.2. <code>packages.xml</code></h3>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">package</span> <span class="hljs-attr">format</span> = &quot;<span class="hljs-attr">2</span>&quot;&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span> service_demo <span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span> 0.1.0 <span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>
+      This package service_demo
+  <span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">maintainer</span> <span class="hljs-attr">email</span>=<span class="hljs-string">&quot;user@example.com&quot;</span>&gt;</span>someone<span class="hljs-tag">&lt;/<span class="hljs-name">maintainer</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">license</span>&gt;</span> mit <span class="hljs-tag">&lt;/<span class="hljs-name">license</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">buildtool_depend</span>&gt;</span> catkin <span class="hljs-tag">&lt;/<span class="hljs-name">buildtool_depend</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span> roscpp <span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span> std_msgs <span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span> message_generation <span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">exec_depend</span>&gt;</span> message_runtime <span class="hljs-tag">&lt;/<span class="hljs-name">exec_depend</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">package</span>&gt;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="topic-in-roscpp.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: topic in roscpp">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"service in roscpp","level":"1.2.6.3","depth":3,"previous":{"title":"topic in roscpp","level":"1.2.6.2","depth":3,"path":"ROS/topic-in-roscpp.md","ref":"./ROS/topic-in-roscpp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/service-in-roscpp.md","mtime":"2021-01-28T12:28:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-28T12:29:53.118Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
