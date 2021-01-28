@@ -1,10 +1,12 @@
-# topic-in-roscpp
+# topic in roscpp
+
+[topic和msg相关解释](./Topic和msg.md)
 
 以`topic_demo`为例，自定义一个`gps`类型的消息（包括`x`, `y`, `state`），一个节点以一定频率模拟发布`gps`信息，另一个节点进行消息接收并计算出当前位置与原点`(0, 0)`的欧氏距离
 
 ## 1. 创建消息
 
-### 1.1. `topic_demo/msg/gps.msg`文件
+新建`topic_demo/msg/gps.msg`文件
 
 ```text
 float32 x       # x坐标
@@ -13,39 +15,6 @@ string state    # 工作状态
 ```
 
 - 程序中对消息的操作方法类似于对结构体的操作。
-
-### 1.2. `topic_demo/CMakeLists.txt`文件
-
-```cmake
-cmake_minimum_required(VERSION 2.8.3)
-project(topic_demo)
-
-find_package(catkin REQUIRED COMPONENTS
-    roscpp
-    std_msgs
-    message_generation
-)
-
-add_message_files(FILES
-    gps.msg
-)
-
-generate_messages(DEPENDENCIES
-    std_msgs
-)
-```
-
-- ROS的消息的格式即`msg`文件是ROS自行定义的，并不是Cpp的标准，因此需要依赖`message_generation`功能包来将`gps.msg`文件“编译”成符合Cpp标准的形式的类、头文件等
-- 消息中用到的`float32`和`string`并不是Cpp的标准格式，而是ROS系统提供的格式，因此需要依赖`std_msgs`包
-
-### 1.3. `topic_demo/package.xml`文件
-
-```xml
-<build_depend> message_generation </build_depend>
-<run_depend> message_runtime </run_depend>
-```
-
-- 在编译的时候需要用到`message_generation`依赖，在节点运行的时候需要用到`message_runtime`依赖，提供消息运行时需要的依赖
 
 ## 2. 创建节点
 
@@ -94,7 +63,7 @@ int main(int argc, char **argv)
 ```
 
 - 节点句柄的`advertise`函数是模板函数，因此在创建`ros::Publisher`对象时需要指定消息类型为`topic_demo::gps`，指定`pub`的发布主题为`gps_info`，发送队列大小为1
-- `topic_demo::gps`这个消息类的命名空间为`topic_demo`的原因是`CMakeLists.txt`中定义的项目名是`topic_demo`
+- `topic_demo::gps`这个消息的命名空间为`topic_demo`的原因是`CMakeLists.txt`中定义的项目名是`topic_demo`
 
 ### 2.2. 消息接收节点
 
@@ -145,19 +114,74 @@ int main(int argc, char **argv)
 
 ![single-multi-spin.png](./imgs/single-multi-spin.jpg)
 
-### 2.3. `topic_demo/CMakeLists.txt`文件
+## 3. 项目结构文件
+
+### 3.1. `topic_demo/CMakeLists.txt`文件
 
 ```cmake
+cmake_minimum_required(VERSION 2.8.3)
+project(topic_demo)
+
+find_package(catkin REQUIRED COMPONENTS
+    roscpp
+    std_msgs
+    message_generation
+)
+
+add_message_files(FILES
+    gps.msg
+)
+
+generate_messages(DEPENDENCIES
+    std_msgs
+)
+
 add_executable(talker src/talker.cpp) #生成可执行文件talker
-add_dependencies(talker topic_demo_generate_messages_cpp)
-#表明在编译talker前，必须先生编译完成自定义消息
-#必须添加add_dependencies，否则找不到自定义的msg产生的头文件
-#表明在编译talker前，必须先生编译完成自定义消息
+
+# add_dependencies(talker topic_demo_generate_messages_cpp)
+add_dependencies(talker ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# 表明在编译talker前，必须先生编译完成自定义消息
+# 必须添加add_dependencies，否则找不到自定义的msg产生的头文件
+# 表明在编译talker前，必须先生编译完成自定义消息
+
 target_link_libraries(talker ${catkin_LIBRARIES}) #链接
 
 add_executable(listener src/listener.cpp ) #声称可执行文件listener
-add_dependencies(listener topic_demo_generate_messages_cpp)
+add_dependencies(listener ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(listener ${catkin_LIBRARIES})#链接
 ```
 
+- ROS的消息的格式即`msg`文件是ROS自行定义的，并不是Cpp的标准，因此需要依赖`message_generation`功能包来将`gps.msg`文件“编译”成符合Cpp标准的形式的结构体、头文件等
+- 消息中用到的`float32`和`string`并不是Cpp的标准格式，而是ROS系统提供的格式，因此需要依赖`std_msgs`包
+- `generate_messages()`是用来生成msg的，如果没有这行，在源程序中会找不到`gps.h`，也就是没有生成消息结构体
+
 参考[ROS 机器人技术 - 解析 CMakeList.txt 文件](https://dlonng.com/posts/ros-cmakelist)
+
+### 3.2. `topic_demo/package.xml`文件
+
+```xml
+<package format = "2">
+  <name> topic_demo </name>
+  <version> 0.1.0 </version>
+  <description>
+      This package topic_demo
+  </description>
+
+  <maintainer email="user@example.com">someone</maintainer>
+  <license> mit </license>
+
+  <buildtool_depend> catkin </buildtool_depend>
+
+  <depend> roscpp </depend>
+  <depend> std_msgs </depend>
+
+  <build_depend> message_generation </build_depend>
+
+  <exec_depend> message_runtime </exec_depend>
+
+</package>
+```
+
+- 在编译的时候需要用到`message_generation`依赖
+- 在节点运行的时候需要用到`message_runtime`依赖，提供消息运行时需要的依赖
+- xml文件的必填项参考[package.xml](./package.xml.md)
