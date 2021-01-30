@@ -1,0 +1,716 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>param in roscpp · Notes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Liyi">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="时钟.html" />
+    
+    
+    <link rel="prev" href="service-in-roscpp.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ROS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="ROS开发环境.html">
+            
+                <a href="ROS开发环境.html">
+            
+                    
+                    ROS开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="二进制包和源码包.html">
+            
+                <a href="二进制包和源码包.html">
+            
+                    
+                    二进制包和源码包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="ROS工作空间.html">
+            
+                <a href="ROS工作空间.html">
+            
+                    
+                    ROS工作空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="packages.html">
+            
+                <a href="packages.html">
+            
+                    
+                    packages
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="package.xml.html">
+            
+                <a href="package.xml.html">
+            
+                    
+                    package.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="CMakeLists.txt.html">
+            
+                <a href="CMakeLists.txt.html">
+            
+                    
+                    CMakeLists.txt
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="ROS通信架构.html">
+            
+                <a href="ROS通信架构.html">
+            
+                    
+                    ROS通信架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="Launch文件.html">
+            
+                <a href="Launch文件.html">
+            
+                    
+                    Launch文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="Topic和msg.html">
+            
+                <a href="Topic和msg.html">
+            
+                    
+                    Topic和msg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="Service和srv.html">
+            
+                <a href="Service和srv.html">
+            
+                    
+                    Service和srv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="Action.html">
+            
+                <a href="Action.html">
+            
+                    
+                    Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="Parameter-server.html">
+            
+                <a href="Parameter-server.html">
+            
+                    
+                    Parameter server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="roscpp.html">
+            
+                <a href="roscpp.html">
+            
+                    
+                    roscpp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="init以及NodeHandle.html">
+            
+                <a href="init以及NodeHandle.html">
+            
+                    
+                    init以及NodeHandle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="topic-in-roscpp.html">
+            
+                <a href="topic-in-roscpp.html">
+            
+                    
+                    topic in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="service-in-roscpp.html">
+            
+                <a href="service-in-roscpp.html">
+            
+                    
+                    service in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.6.4" data-path="param-in-roscpp.html">
+            
+                <a href="param-in-roscpp.html">
+            
+                    
+                    param in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.5" data-path="时钟.html">
+            
+                <a href="时钟.html">
+            
+                    
+                    时钟
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.6" data-path="日志和异常.html">
+            
+                <a href="日志和异常.html">
+            
+                    
+                    日志和异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="命名空间.html">
+            
+                <a href="命名空间.html">
+            
+                    
+                    命名空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >param in roscpp</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="param-in-roscpp">param in roscpp</h1>
+<p><a href="ROS/Parameter-server.md">Parameter server &#x76F8;&#x5173;&#x89E3;&#x91CA;</a></p>
+<p>roscpp&#x4E3A;&#x53C2;&#x6570;&#x670D;&#x52A1;&#x5668;&#x7684;&#x7EF4;&#x62A4;&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x5957;api</p>
+<ul>
+<li><code>ros::param</code>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#x7684;&#x51FD;&#x6570;</li>
+<li><code>ros::NodeHandle</code>&#x7C7B;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;</li>
+</ul>
+<h2 id="1-paramdemo">1. param_demo</h2>
+<p><code>param_demo/src/param.cpp</code>&#x6587;&#x4EF6;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;ros/ros.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> **argv)</span></span>{
+    ros::init(argc, argv, <span class="hljs-string">&quot;param_demo&quot;</span>);
+    ros::NodeHandle nh;
+    <span class="hljs-keyword">int</span> parameter1, parameter2, parameter3, parameter4, parameter5;
+
+    <span class="hljs-comment">//Get Param&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-comment">//ros::param::get()&#x83B7;&#x53D6;&#x53C2;&#x6570;&#x201C;param1&#x201D;&#x7684;value&#xFF0C;&#x5199;&#x5165;&#x5230;parameter1&#x4E0A;</span>
+    <span class="hljs-keyword">bool</span> ifget1 = ros::param::get(<span class="hljs-string">&quot;param1&quot;</span>, parameter1);
+
+    <span class="hljs-comment">//ros::NodeHandle::getParam()&#x83B7;&#x53D6;&#x53C2;&#x6570;</span>
+    <span class="hljs-keyword">bool</span> ifget2 = nh.getParam(<span class="hljs-string">&quot;param2&quot;</span>,parameter2);
+
+    <span class="hljs-comment">//&#x5982;&#x679C;get&#x4E0D;&#x5230;&#x6307;&#x5B9A;&#x7684;param&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x7ED9;parameter3&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x503C;(&#x5982;33333)</span>
+        nh.param(<span class="hljs-string">&quot;param3&quot;</span>, parameter3, <span class="hljs-number">33333</span>);
+
+    <span class="hljs-keyword">if</span>(ifget1)
+        ROS_INFO(<span class="hljs-string">&quot;Get param1 = %d&quot;</span>, parameter1);
+    <span class="hljs-keyword">else</span>
+        ROS_WARN(<span class="hljs-string">&quot;Didn&apos;t retrieve param1&quot;</span>);
+    <span class="hljs-keyword">if</span>(ifget2)
+        ROS_INFO(<span class="hljs-string">&quot;Get param2 = %d&quot;</span>, parameter2);
+    <span class="hljs-keyword">else</span>
+        ROS_WARN(<span class="hljs-string">&quot;Didn&apos;t retrieve param2&quot;</span>);
+    <span class="hljs-keyword">if</span>(nh.hasParam(<span class="hljs-string">&quot;param3&quot;</span>))
+        ROS_INFO(<span class="hljs-string">&quot;Get param3 = %d&quot;</span>, parameter3);
+    <span class="hljs-keyword">else</span>
+        ROS_WARN(<span class="hljs-string">&quot;Didn&apos;t retrieve param3&quot;</span>);
+
+
+    <span class="hljs-comment">//Set Param&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-comment">//ros::param::set()&#x8BBE;&#x7F6E;&#x53C2;&#x6570;</span>
+    parameter4 = <span class="hljs-number">4</span>;
+    ros::param::<span class="hljs-built_in">set</span>(<span class="hljs-string">&quot;param4&quot;</span>, parameter4);
+
+    <span class="hljs-comment">//ros::NodeHandle::setParam()&#x8BBE;&#x7F6E;&#x53C2;&#x6570;</span>
+    parameter5 = <span class="hljs-number">5</span>;
+    nh.setParam(<span class="hljs-string">&quot;param5&quot;</span>,parameter5);
+
+    ROS_INFO(<span class="hljs-string">&quot;Param4 is set to be %d&quot;</span>, parameter4);
+    ROS_INFO(<span class="hljs-string">&quot;Param5 is set to be %d&quot;</span>, parameter5);
+
+
+    <span class="hljs-comment">//Check Param&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-comment">//ros::NodeHandle::hasParam()</span>
+    <span class="hljs-keyword">bool</span> ifparam5 = nh.hasParam(<span class="hljs-string">&quot;param5&quot;</span>);
+
+    <span class="hljs-comment">//ros::param::has()</span>
+    <span class="hljs-keyword">bool</span> ifparam6 = ros::param::has(<span class="hljs-string">&quot;param6&quot;</span>);
+
+    <span class="hljs-keyword">if</span>(ifparam5) 
+        ROS_INFO(<span class="hljs-string">&quot;Param5 exists&quot;</span>);
+    <span class="hljs-keyword">else</span>
+        ROS_INFO(<span class="hljs-string">&quot;Param5 doesn&apos;t exist&quot;</span>);
+    <span class="hljs-keyword">if</span>(ifparam6) 
+        ROS_INFO(<span class="hljs-string">&quot;Param6 exists&quot;</span>);
+    <span class="hljs-keyword">else</span>
+        ROS_INFO(<span class="hljs-string">&quot;Param6 doesn&apos;t exist&quot;</span>);
+
+
+    <span class="hljs-comment">//Delete Param&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-comment">//ros::NodeHandle::deleteParam()</span>
+    <span class="hljs-keyword">bool</span> ifdeleted5 = nh.deleteParam(<span class="hljs-string">&quot;param5&quot;</span>);
+
+    <span class="hljs-comment">//ros::param::del()</span>
+    <span class="hljs-keyword">bool</span> ifdeleted6 = ros::param::del(<span class="hljs-string">&quot;param6&quot;</span>);
+
+
+    <span class="hljs-keyword">if</span>(ifdeleted5)
+        ROS_INFO(<span class="hljs-string">&quot;Param5 deleted&quot;</span>);
+    <span class="hljs-keyword">else</span>
+        ROS_INFO(<span class="hljs-string">&quot;Param5 not deleted&quot;</span>);
+    <span class="hljs-keyword">if</span>(ifdeleted6)
+        ROS_INFO(<span class="hljs-string">&quot;Param6 deleted&quot;</span>);
+    <span class="hljs-keyword">else</span>
+        ROS_INFO(<span class="hljs-string">&quot;Param6 not deleted&quot;</span>);
+
+
+    ros::<span class="hljs-function">Rate <span class="hljs-title">rate</span><span class="hljs-params">(<span class="hljs-number">0.3</span>)</span></span>;
+    <span class="hljs-keyword">while</span>(ros::ok()){
+        <span class="hljs-keyword">int</span> parameter = <span class="hljs-number">0</span>;
+
+        ROS_INFO(<span class="hljs-string">&quot;=============Loop==============&quot;</span>);
+        <span class="hljs-comment">//roscpp&#x4E2D;&#x5C1A;&#x672A;&#x6709;ros::param::getallparams()&#x4E4B;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;</span>
+        <span class="hljs-keyword">if</span>(ros::param::get(<span class="hljs-string">&quot;param1&quot;</span>, parameter))
+            ROS_INFO(<span class="hljs-string">&quot;parameter param1 = %d&quot;</span>, parameter);
+        <span class="hljs-keyword">if</span>(ros::param::get(<span class="hljs-string">&quot;param2&quot;</span>, parameter))
+            ROS_INFO(<span class="hljs-string">&quot;parameter param2 = %d&quot;</span>, parameter);
+        <span class="hljs-keyword">if</span>(ros::param::get(<span class="hljs-string">&quot;param3&quot;</span>, parameter))
+            ROS_INFO(<span class="hljs-string">&quot;parameter param3 = %d&quot;</span>, parameter);
+        <span class="hljs-keyword">if</span>(ros::param::get(<span class="hljs-string">&quot;param4&quot;</span>, parameter))
+            ROS_INFO(<span class="hljs-string">&quot;parameter param4 = %d&quot;</span>, parameter);
+        <span class="hljs-keyword">if</span>(ros::param::get(<span class="hljs-string">&quot;param5&quot;</span>, parameter))
+            ROS_INFO(<span class="hljs-string">&quot;parameter param5 = %d&quot;</span>, parameter);
+        <span class="hljs-keyword">if</span>(ros::param::get(<span class="hljs-string">&quot;param6&quot;</span>, parameter))
+            ROS_INFO(<span class="hljs-string">&quot;parameter param6 = %d&quot;</span>, parameter);
+        rate.sleep();
+    }
+}
+</code></pre>
+<p><code>param_demo/launch/param_demo_cpp.launch</code>&#x6587;&#x4EF6;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">launch</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--param&#x53C2;&#x6570;&#x914D;&#x7F6E;--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;param1&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;param2&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span> /&gt;</span>
+    <span class="hljs-comment">&lt;!--param name=&quot;table_description&quot; command=&quot;$(find xacro)/xacro.py $(find gazebo_worlds)/objects/table.urdf.xacro&quot; /--&gt;</span>
+
+    <span class="hljs-comment">&lt;!--rosparam&#x53C2;&#x6570;&#x914D;&#x7F6E;--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">rosparam</span>&gt;</span>   
+        param3: 3
+        param4: 4
+        param5: 5
+    <span class="hljs-tag">&lt;/<span class="hljs-name">rosparam</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--&#x4EE5;&#x4E0A;&#x5199;&#x6CD5;&#x5C06;&#x53C2;&#x6570;&#x8F6C;&#x6210;YAML&#x6587;&#x4EF6;&#x52A0;&#x8F7D;&#xFF0C;&#x6CE8;&#x610F;param&#x524D;&#x9762;&#x5FC5;&#x987B;&#x4E3A;&#x7A7A;&#x683C;&#xFF0C;&#x4E0D;&#x80FD;&#x7528;Tab&#xFF0C;&#x5426;&#x5219;YAML&#x89E3;&#x6790;&#x9519;&#x8BEF;--&gt;</span>
+    <span class="hljs-comment">&lt;!--rosparam file=&quot;$(find robot_sim_demo)/config/xbot-u_control.yaml&quot; command=&quot;load&quot; /--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">node</span> <span class="hljs-attr">pkg</span>=<span class="hljs-string">&quot;param_demo&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;param_demo&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;param_demo&quot;</span> <span class="hljs-attr">output</span>=<span class="hljs-string">&quot;screen&quot;</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">launch</span>&gt;</span>
+</code></pre>
+<h2 id="2-&#x8FD0;&#x884C;&#x7ED3;&#x679C;">2. &#x8FD0;&#x884C;&#x7ED3;&#x679C;</h2>
+<p>&#x6267;&#x884C;<code>rosrun param_demo param_demo</code>&#x7684;&#x7ED3;&#x679C;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-text">[ WARN] [1611930965.096364533]: Didn&apos;t retrieve param1
+[ WARN] [1611930965.096428485]: Didn&apos;t retrieve param2
+[ WARN] [1611930965.097569665]: Didn&apos;t retrieve param3
+[ INFO] [1611930965.099216747]: Param4 is set to be 4
+[ INFO] [1611930965.099250417]: Param5 is set to be 5
+[ INFO] [1611930965.100457062]: Param5 exists
+[ INFO] [1611930965.100498410]: Param6 doesn&apos;t exist
+[ INFO] [1611930965.102516533]: Param5 deleted
+[ INFO] [1611930965.102558813]: Param6 not deleted
+[ INFO] [1611930965.102579994]: =============Loop==============
+[ INFO] [1611930965.104550994]: parameter param4 = 4
+[ INFO] [1611930968.438369688]: =============Loop==============
+[ INFO] [1611930968.441288282]: parameter param4 = 4
+</code></pre>
+<ul>
+<li>param1 2&#x5B9A;&#x4E49;&#x5728;launch&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x76F4;&#x63A5;&#x901A;&#x8FC7;<code>rosrun</code>&#x6253;&#x5F00;&#x8282;&#x70B9;&#x7684;&#x8BDD;&#xFF0C;&#x6CA1;&#x6709;&#x52A0;&#x8F7D;launch&#x6587;&#x4EF6;&#x4E2D;&#x5BF9;&#x8FD9;&#x51E0;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x6240;&#x4EE5;&#x8282;&#x70B9;&#x65E0;&#x6CD5;&#x8BFB;&#x53D6;&#x53C2;&#x6570;</li>
+<li>param3 &#x8BFB;&#x53D6;&#x7684;&#x65F6;&#x5019;&#x53C2;&#x6570;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x9488;&#x5BF9;<code>param3</code>&#x7684;&#x8BFB;&#x53D6;&#x65B9;&#x6CD5;&#x662F;<code>nh.param(&quot;param3&quot;, parameter3, 33333);</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x7B2C;&#x4E09;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x82E5;&#x53C2;&#x6570;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x6CA1;&#x6709;<code>param3</code>&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x4F1A;&#x7ED9;<code>parameter3</code>&#x53D8;&#x91CF;&#x8D4B;&#x9ED8;&#x8BA4;&#x503C;<code>33333</code></li>
+</ul>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">param</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; param_name, T&amp; param_val, <span class="hljs-keyword">const</span> T&amp; default_val)</span> <span class="hljs-keyword">const</span>
+</span>{
+    <span class="hljs-keyword">if</span> (hasParam(param_name))
+    {
+        <span class="hljs-keyword">if</span> (getParam(param_name, param_val))
+        {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        }
+    }
+
+param_val = default_val;
+<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+</code></pre>
+<p>&#x6267;&#x884C;<code>roslaunch param_demo param_demo_cpp.launch</code>&#x7684;&#x7ED3;&#x679C;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-text">process[param_demo-1]: started with pid [29494]
+[ INFO] [1611929812.346775227]: Get param1 = 1
+[ INFO] [1611929812.346835230]: Get param2 = 2
+[ INFO] [1611929812.347514679]: Get param3 = 3
+[ INFO] [1611929812.349519691]: Param4 is set to be 4
+[ INFO] [1611929812.349576397]: Param5 is set to be 5
+[ INFO] [1611929812.351273386]: Param5 exists
+[ INFO] [1611929812.351307720]: Param6 doesn&apos;t exist
+[ INFO] [1611929812.353115211]: Param5 deleted
+[ INFO] [1611929812.353152792]: Param6 not deleted
+[ INFO] [1611929812.353196434]: =============Loop==============
+[ INFO] [1611929812.354020600]: parameter param1 = 1
+[ INFO] [1611929812.354780836]: parameter param2 = 2
+[ INFO] [1611929812.355424684]: parameter param3 = 3
+[ INFO] [1611929812.356337908]: parameter param4 = 4
+[ INFO] [1611929815.688232581]: =============Loop==============
+[ INFO] [1611929815.689976152]: parameter param1 = 1
+[ INFO] [1611929815.691289476]: parameter param2 = 2
+[ INFO] [1611929815.692041662]: parameter param3 = 3
+[ INFO] [1611929815.692681417]: parameter param4 = 4
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="service-in-roscpp.html" class="navigation navigation-prev " aria-label="Previous page: service in roscpp">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="时钟.html" class="navigation navigation-next " aria-label="Next page: 时钟">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"param in roscpp","level":"1.2.6.4","depth":3,"next":{"title":"时钟","level":"1.2.6.5","depth":3,"path":"ROS/时钟.md","ref":"./ROS/时钟.md","articles":[]},"previous":{"title":"service in roscpp","level":"1.2.6.3","depth":3,"path":"ROS/service-in-roscpp.md","ref":"./ROS/service-in-roscpp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/param-in-roscpp.md","mtime":"2021-01-30T18:08:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T18:10:33.302Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

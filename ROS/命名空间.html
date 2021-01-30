@@ -1,0 +1,657 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>命名空间 · Notes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Liyi">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="日志和异常.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ROS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="ROS开发环境.html">
+            
+                <a href="ROS开发环境.html">
+            
+                    
+                    ROS开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="二进制包和源码包.html">
+            
+                <a href="二进制包和源码包.html">
+            
+                    
+                    二进制包和源码包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="ROS工作空间.html">
+            
+                <a href="ROS工作空间.html">
+            
+                    
+                    ROS工作空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="packages.html">
+            
+                <a href="packages.html">
+            
+                    
+                    packages
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="package.xml.html">
+            
+                <a href="package.xml.html">
+            
+                    
+                    package.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="CMakeLists.txt.html">
+            
+                <a href="CMakeLists.txt.html">
+            
+                    
+                    CMakeLists.txt
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="ROS通信架构.html">
+            
+                <a href="ROS通信架构.html">
+            
+                    
+                    ROS通信架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="Launch文件.html">
+            
+                <a href="Launch文件.html">
+            
+                    
+                    Launch文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="Topic和msg.html">
+            
+                <a href="Topic和msg.html">
+            
+                    
+                    Topic和msg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="Service和srv.html">
+            
+                <a href="Service和srv.html">
+            
+                    
+                    Service和srv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="Action.html">
+            
+                <a href="Action.html">
+            
+                    
+                    Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="Parameter-server.html">
+            
+                <a href="Parameter-server.html">
+            
+                    
+                    Parameter server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="roscpp.html">
+            
+                <a href="roscpp.html">
+            
+                    
+                    roscpp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="init以及NodeHandle.html">
+            
+                <a href="init以及NodeHandle.html">
+            
+                    
+                    init以及NodeHandle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="topic-in-roscpp.html">
+            
+                <a href="topic-in-roscpp.html">
+            
+                    
+                    topic in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="service-in-roscpp.html">
+            
+                <a href="service-in-roscpp.html">
+            
+                    
+                    service in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="param-in-roscpp.html">
+            
+                <a href="param-in-roscpp.html">
+            
+                    
+                    param in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.5" data-path="时钟.html">
+            
+                <a href="时钟.html">
+            
+                    
+                    时钟
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.6" data-path="日志和异常.html">
+            
+                <a href="日志和异常.html">
+            
+                    
+                    日志和异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.7" data-path="命名空间.html">
+            
+                <a href="命名空间.html">
+            
+                    
+                    命名空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >命名空间</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x547D;&#x540D;&#x7A7A;&#x95F4;">&#x547D;&#x540D;&#x7A7A;&#x95F4;</h1>
+<h2 id="1-&#x540D;&#x79F0;&#xFF08;names&#xFF09;">1. &#x540D;&#x79F0;&#xFF08;Names&#xFF09;</h2>
+<p>&#x5728;ROS&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x56FE;&#xFF08;&#x4E5F;&#x79F0;&#x8BA1;&#x7B97;&#x56FE;computation graph&#xFF09;&#x4EE5;&#x4E0B;&#x90FD;&#x53EF;&#x4EE5;&#x79F0;&#x4E3A;&#x56FE;</p>
+<ul>
+<li><code>Nodes</code>: A node is an executable that uses ROS to communicate with other nodes.</li>
+<li><code>Messages</code>: ROS data type used when subscribing or publishing to a topic.</li>
+<li><code>Topics</code>: Nodes can publish messages to a topic as well as subscribe to a topic to receive messages.</li>
+<li><code>Master</code>: Name service for ROS (i.e. helps nodes find each other)</li>
+<li><code>rosout</code>: ROS equivalent of stdout/stderr</li>
+<li><code>roscore</code>: Master + rosout + parameter server (parameter server will be introduced later)</li>
+</ul>
+<p>&#x8FD9;&#x4E9B;&#x56FE;&#x7684;&#x547D;&#x540D;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x56FE;&#x7684;&#x540D;&#x5B57;&#x662F;&#x5C42;&#x7EA7;&#x5316;&#x7684;&#xFF0C;&#x7531;&#x4E00;&#x7CFB;&#x5217;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6784;&#x6210;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x540D;&#x5B57;&#x7684;&#x552F;&#x4E00;&#x6027;&#xFF0C;&#x5728;ROS&#x4E2D;&#x6709;4&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x56FE;&#x8D44;&#x6E90;&#x540D;</p>
+<ul>
+<li>base&#xFF08;&#x57FA;&#x672C;&#x540D;&#x79F0;&#xFF09;</li>
+<li>relative/name &#xFF08;&#x76F8;&#x5BF9;&#x540D;&#x79F0;&#xFF09;</li>
+<li>/global/name &#xFF08;&#x5168;&#x5C40;&#x540D;&#x79F0;&#xFF09;</li>
+<li>~private/name &#xFF08;&#x79C1;&#x6709;&#x540D;&#x79F0;&#xFF09;</li>
+</ul>
+<p>&#x5728;&#x9ED8;&#x8BA4;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5BF9;&#x4E8E;&#x540D;&#x5B57;&#x7684;&#x89E3;&#x6790;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x8282;&#x70B9;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5B8C;&#x6210;&#x7684;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x540D;&#x79F0;</th>
+<th style="text-align:center">&#x89E3;&#x91CA;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&#x76F8;&#x5BF9;&#x540D;&#x79F0;</td>
+<td style="text-align:center">&#x76F8;&#x5BF9;&#x540D;&#x79F0;&#x7684;&#x89E3;&#x6790;&#x662F;&#x4F9D;&#x8D56;&#x9ED8;&#x8BA4;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x3002;&#x5982;&#x9ED8;&#x8BA4;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E3A;&#x201D;/&#x201D; &#x5219;&#x540D;&#x79F0;&#x201C;A/B&#x201D;&#x88AB;&#x89E3;&#x6790;&#x4E3A;&#x201D;/A/B&#x201D;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x57FA;&#x672C;&#x540D;&#x79F0;</td>
+<td style="text-align:center">&#x57FA;&#x672C;&#x540D;&#x79F0;&#x662F;&#x6CA1;&#x6709;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x9650;&#x5B9A;&#x7B26;&#x7684;&#x76F8;&#x5BF9;&#x540D;&#x79F0;&#xFF08;&#x5373;&#x6CA1;&#x6709;/&#x53F7;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x5168;&#x5C40;&#x540D;&#x79F0;</td>
+<td style="text-align:center">&#x4EE5;&#x201C;/&#x201D;&#x5F00;&#x5934;&#x7684;&#x540D;&#x79F0;&#x79F0;&#x4E3A;&#x5168;&#x5C40;&#x540D;&#x79F0;&#xFF0C;&#x4EE3;&#x8868;&#x8BE5;&#x540D;&#x79F0;&#x5C5E;&#x4E8E;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;&#x610F;&#x601D;&#x662F;&#x5728;ROS&#x7CFB;&#x7EDF;&#x7684;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x3002;&#x65E0;&#x8BBA;&#x5728;ROS&#x7CFB;&#x7EDF;&#x7684;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x5B83;&#x90FD;&#x4EE5;&#x660E;&#x786E;&#x7684;&#x610F;&#x4E49;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x79C1;&#x6709;&#x540D;&#x79F0;</td>
+<td style="text-align:center">&#x79C1;&#x6709;&#x540D;&#x79F0;&#x4EE5;&#x201D;~&#x201D;&#x5F00;&#x5934;&#xFF0C;&#x5B83;&#x4E0E;&#x76F8;&#x5BF9;&#x56FE;&#x540D;&#x79F0;&#x7684;&#x533A;&#x522B;&#x662F;&#xFF0C;&#x5B83;&#x7684;&#x89E3;&#x6790;&#x4E0D;&#x4F9D;&#x8D56;&#x4E0E;&#x9ED8;&#x8BA4;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x800C;&#x662F;&#x4F9D;&#x8D56;&#x5305;&#x540D;&#x79F0;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x7684;&#x3001;&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x673A;&#x5668;&#x4EBA;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F17;&#x591A;&#x5F00;&#x53D1;&#x8005;&#x5F00;&#x53D1;&#x7684;&#x5305;&#x5E76;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x6240;&#x6709;&#x5B9A;&#x4E49;&#x7684;&#x8D44;&#x6E90;&#x547D;&#x540D;&#x90FD;&#x4E0D;&#x540C;&#xFF0C;&#x4E00;&#x65E6;&#x542B;&#x6709;&#x76F8;&#x540C;&#x7684;&#x540D;&#x79F0;&#x7684;&#x8D44;&#x6E90;&#x7684;&#x5305;&#x5728;&#x4E00;&#x4E2A;ROS&#x7F51;&#x7EDC;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x5C31;&#x4F1A;&#x53D1;&#x751F;&#x51B2;&#x7A81;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x7684;ROS&#x7F51;&#x7EDC;&#x4E2D;&#xFF0C;&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x3001;&#x8BDD;&#x9898;&#x3001;&#x6D88;&#x606F;&#x548C;&#x53C2;&#x6570;&#x7684;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x4E0D;&#x7136;&#x5C31;&#x4F1A;&#x53D1;&#x751F;&#x51B2;&#x7A81;&#xFF0C;&#x8FD9;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x3002;&#x533A;&#x5206;&#x76F8;&#x540C;&#x540D;&#x5B57;&#x7684;&#x8D44;&#x6E90;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;</p>
+<ul>
+<li>&#x7ED9;&#x4E24;&#x4E2A;&#x540D;&#x5B57;&#x524D;&#x52A0;&#x4E0A;&#x5B9A;&#x8BED;&#xFF0C;&#x5C31;&#x662F;&#x6DFB;&#x52A0;&#x547D;&#x540D;&#x7A7A;&#x95F4;</li>
+<li>&#x7ED9;&#x4E24;&#x4E2A;&#x540D;&#x5B57;&#x53D6;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x522B;&#x540D;&#xFF0C;&#x5C31;&#x662F;&#x91CD;&#x6620;&#x5C04;</li>
+</ul>
+<p>&#x53C2;&#x8003;</p>
+<ul>
+<li><a href="https://blog.csdn.net/u014587147/article/details/75647002" target="_blank">ROS&#x4E4B;&#x547D;&#x540D;&#x7A7A;&#x95F4;</a></li>
+<li><a href="https://blog.csdn.net/jrc_january/article/details/76587630" target="_blank">ROS&#x5B66;&#x4E60; &#x4E4B; &#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF08;NameSpace&#xFF09;&#x3001;&#x91CD;&#x6620;&#x5C04;&#xFF08;Remapping&#xFF09;&#x3001;&#x540D;&#x79F0;&#xFF08;Names&#xFF09;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/80366497" target="_blank">ROS&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0E;&#x91CD;&#x6620;&#x5C04;</a></li>
+</ul>
+<h2 id="2-param">2. param</h2>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">launch</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--&#x5168;&#x5C40;&#x53C2;&#x6570;serial--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;serial&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;5&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">node</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name_demo&quot;</span> <span class="hljs-attr">pkg</span>=<span class="hljs-string">&quot;name_demo&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;name_demo&quot;</span> <span class="hljs-attr">output</span>=<span class="hljs-string">&quot;screen&quot;</span>&gt;</span>
+        <span class="hljs-comment">&lt;!--&#x5C40;&#x90E8;&#x53C2;&#x6570;serial--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;serial&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;10&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">node</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">launch</span>&gt;</span>
+</code></pre>
+<ul>
+<li>&#x5728;&#x8FD9;&#x4E00;&#x4E2A;launch&#x6587;&#x4EF6;&#x4E2D;&#x6709;&#x4E24;&#x4E2A;&#x540D;&#x4E3A;<code>serial</code>&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x4F46;&#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x503C;&#x4E0D;&#x540C;&#xFF0C;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x4F5C;&#x7528;&#x57DF;&#x7684;<code>NodeHandle</code>&#x53E5;&#x67C4;&#x53EF;&#x4EE5;&#x5BF9;&#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x5206;&#x522B;&#x8BFB;&#x5199;</li>
+</ul>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ros/ros.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span>* argv[])</span>
+</span>{
+    <span class="hljs-keyword">int</span> serial_number = <span class="hljs-number">-1</span>;<span class="hljs-comment">//serial_number&#x521D;&#x59CB;&#x5316;</span>
+    ros::init(argc, argv, <span class="hljs-string">&quot;name_demo&quot;</span>);<span class="hljs-comment">//node&#x521D;&#x59CB;&#x5316;</span>
+    <span class="hljs-comment">/*&#x521B;&#x5EFA;&#x547D;&#x540D;&#x7A7A;&#x95F4;*/</span>
+    <span class="hljs-comment">//n &#x662F;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;</span>
+    ros::NodeHandle n;
+    <span class="hljs-comment">//nh &#x662F;&#x5C40;&#x90E8;&#x547D;&#x540D;&#x7A7A;&#x95F4;</span>
+    ros::<span class="hljs-function">NodeHandle <span class="hljs-title">nh</span><span class="hljs-params">(<span class="hljs-string">&quot;~&quot;</span>)</span></span>;
+
+    <span class="hljs-comment">//&#x63D0;&#x53D6;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#x7684;&#x53C2;&#x6570;serial</span>
+    n.getParam(<span class="hljs-string">&quot;serial&quot;</span>, serial_number);        <span class="hljs-comment">//&#x5728;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#xFF0C;&#x8981;&#x63D0;&#x53D6;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x76F4;&#x63A5;&#x5199;&#x53C2;&#x6570;&#x540D;</span>
+    ROS_INFO(<span class="hljs-string">&quot;n.getParam(\&quot;serial\&quot;, serial_number); --- global_Serial was %d&quot;</span>, serial_number);
+    nh.getParam(<span class="hljs-string">&quot;/serial&quot;</span>, serial_number);      <span class="hljs-comment">//&#x5728;&#x5C40;&#x90E8;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#xFF0C;&#x8981;&#x63D0;&#x53D6;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x201C;/&#x201D;</span>
+    ROS_INFO(<span class="hljs-string">&quot;nh.getParam(\&quot;/serial\&quot;, serial_number); --- local_to_global_Serial was %d&quot;</span>, serial_number);
+
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;--------------------------------------------\r\n&quot;</span>;
+
+    <span class="hljs-comment">//&#x63D0;&#x53D6;&#x5C40;&#x90E8;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#x7684;&#x53C2;&#x6570;serial</span>
+    n.getParam(<span class="hljs-string">&quot;name_demo/serial&quot;</span>, serial_number);<span class="hljs-comment">//&#x5728;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#xFF0C;&#x8981;&#x63D0;&#x53D6;&#x5C40;&#x90E8;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x6DFB;&#x52A0;node name</span>
+    ROS_INFO(<span class="hljs-string">&quot;n.getParam(\&quot;name_demo/serial\&quot;, serial_number); --- global_to_local_Serial was %d&quot;</span>, serial_number);
+    nh.getParam(<span class="hljs-string">&quot;serial&quot;</span>, serial_number);         <span class="hljs-comment">//&#x5728;&#x5C40;&#x90E8;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#xFF0C;&#x8981;&#x63D0;&#x53D6;&#x5C40;&#x90E8;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x76F4;&#x63A5;&#x5199;&#x53C2;&#x6570;&#x540D;</span>
+    ROS_INFO(<span class="hljs-string">&quot;nh.getParam(\&quot;serial\&quot;, serial_number); --- local_Serial was %d&quot;</span>, serial_number);
+
+    ros::spin();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<ul>
+<li>&#x5728;&#x5B9E;&#x4F8B;&#x5316;<code>NodeHandle</code>&#x53E5;&#x67C4;&#x7684;&#x65F6;&#x5019;&#x4F1A;<code>ros::NodeHandle n;</code>&#x548C;<code>ros::NodeHandle nh(&quot;~&quot;);</code>&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD9;&#x5C31;&#x533A;&#x5206;&#x51FA;&#x4E86;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x548C;&#x5C40;&#x90E8;&#x547D;&#x540D;&#x7A7A;&#x95F4;</li>
+</ul>
+<p><code>roslaunch name_demo demo.launch</code>&#x6267;&#x884C;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-text">process[name_demo-1]: started with pid [7424]
+[ INFO] [1611980559.624305272]: n.getParam(&quot;serial&quot;, serial_number); --- global_Serial was 5
+[ INFO] [1611980559.625404705]: nh.getParam(&quot;/serial&quot;, serial_number); --- local_to_global_Serial was 5
+--------------------------------------------
+[ INFO] [1611980559.626021242]: n.getParam(&quot;name_demo/serial&quot;, serial_number); --- global_to_local_Serial was 10
+[ INFO] [1611980559.626655962]: nh.getParam(&quot;serial&quot;, serial_number); --- local_Serial was 10
+</code></pre>
+<h2 id="3-topic">3. topic</h2>
+<pre><code class="lang-cpp">ros::init(argc, argv, <span class="hljs-string">&quot;listener&quot;</span>);
+ros::<span class="hljs-function">NodeHandle <span class="hljs-title">n</span><span class="hljs-params">()</span></span>;
+ros::<span class="hljs-function">NodeHandle <span class="hljs-title">nh1</span><span class="hljs-params">(<span class="hljs-string">&quot;~&quot;</span>)</span></span>;
+ros::<span class="hljs-function">NodeHandle <span class="hljs-title">nh2</span><span class="hljs-params">(<span class="hljs-string">&quot;~foo&quot;</span>)</span></span>;
+
+ros::Subscriber sub = n.subscribe(<span class="hljs-string">&quot;gps_info&quot;</span>, ...);
+ros::Subscriber sub1 = nh1.subscribe(<span class="hljs-string">&quot;gps_info&quot;</span>, ...);
+ros::Subscriber sub2 = nh2.subscribe(<span class="hljs-string">&quot;gps_info&quot;</span>, ...);
+</code></pre>
+<p><code>rostopic list</code>&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-text">/gps_info
+/listener/foo/gps_info
+/listener/gps_info
+/rosout
+/rosout_agg
+</code></pre>
+<ul>
+<li><code>n</code>&#x53E5;&#x67C4;&#x5728;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x6240;&#x4EE5;&#x9ED8;&#x8BA4;&#x4E3A;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x56E0;&#x6B64;<code>sub</code>&#x8BA2;&#x9605;&#x7684;&#x8BDD;&#x9898;&#x662F;<code>/gps_info</code></li>
+<li><code>nh1</code>&#x53E5;&#x67C4;&#x5728;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#x6307;&#x5B9A;&#x79C1;&#x6709;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;<code>nh1</code>&#x53E5;&#x67C4;&#x8FDB;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x5728;<code>/listener</code>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#x7684;&#xFF0C;&#x56E0;&#x6B64;<code>sub</code>&#x8BA2;&#x9605;&#x7684;&#x8BDD;&#x9898;&#x662F;<code>/listener/gps_info</code></li>
+<li><code>nh2</code>&#x53E5;&#x67C4;&#x5728;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#x6307;&#x5B9A;<code>~foo</code>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;<code>nh2</code>&#x53E5;&#x67C4;&#x8FDB;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x5728;<code>/listener/foo</code>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#x7684;&#xFF0C;&#x56E0;&#x6B64;<code>sub</code>&#x8BA2;&#x9605;&#x7684;&#x8BDD;&#x9898;&#x662F;<code>/listener/foo/gps_info</code></li>
+</ul>
+<p>&#x5F88;&#x660E;&#x663E;&#x8FD9;&#x4E09;&#x4E2A;topic&#x867D;&#x7136;&#x5728;&#x8BA2;&#x9605;&#x7684;&#x65F6;&#x5019;&#x540D;&#x5B57;&#x90FD;&#x662F;<code>gps_info</code>&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x8FD9;&#x662F;&#x4E09;&#x4E2A;&#x4E0D;&#x540C;&#x7684;topic</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="日志和异常.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 日志和异常">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"命名空间","level":"1.2.7","depth":2,"previous":{"title":"日志和异常","level":"1.2.6.6","depth":3,"path":"ROS/日志和异常.md","ref":"./ROS/日志和异常.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/命名空间.md","mtime":"2021-01-30T18:10:01.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T18:10:33.302Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
