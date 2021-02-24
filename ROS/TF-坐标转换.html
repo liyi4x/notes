@@ -1,0 +1,632 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>TF 坐标转换 · Notes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Liyi">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="TF-in-roscpp.html" />
+    
+    
+    <link rel="prev" href="rospy.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ROS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="ROS开发环境.html">
+            
+                <a href="ROS开发环境.html">
+            
+                    
+                    ROS开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="二进制包和源码包.html">
+            
+                <a href="二进制包和源码包.html">
+            
+                    
+                    二进制包和源码包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="ROS工作空间.html">
+            
+                <a href="ROS工作空间.html">
+            
+                    
+                    ROS工作空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="packages.html">
+            
+                <a href="packages.html">
+            
+                    
+                    packages
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="package.xml.html">
+            
+                <a href="package.xml.html">
+            
+                    
+                    package.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="CMakeLists.txt.html">
+            
+                <a href="CMakeLists.txt.html">
+            
+                    
+                    CMakeLists.txt
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="ROS通信架构.html">
+            
+                <a href="ROS通信架构.html">
+            
+                    
+                    ROS通信架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="Launch文件.html">
+            
+                <a href="Launch文件.html">
+            
+                    
+                    Launch文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="Topic和msg.html">
+            
+                <a href="Topic和msg.html">
+            
+                    
+                    Topic和msg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="Service和srv.html">
+            
+                <a href="Service和srv.html">
+            
+                    
+                    Service和srv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="Action.html">
+            
+                <a href="Action.html">
+            
+                    
+                    Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="Parameter-server.html">
+            
+                <a href="Parameter-server.html">
+            
+                    
+                    Parameter server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="roscpp.html">
+            
+                <a href="roscpp.html">
+            
+                    
+                    roscpp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="init以及NodeHandle.html">
+            
+                <a href="init以及NodeHandle.html">
+            
+                    
+                    init以及NodeHandle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="topic-in-roscpp.html">
+            
+                <a href="topic-in-roscpp.html">
+            
+                    
+                    topic in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="service-in-roscpp.html">
+            
+                <a href="service-in-roscpp.html">
+            
+                    
+                    service in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="param-in-roscpp.html">
+            
+                <a href="param-in-roscpp.html">
+            
+                    
+                    param in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.5" data-path="命名空间.html">
+            
+                <a href="命名空间.html">
+            
+                    
+                    命名空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.6" data-path="roscpp时钟.html">
+            
+                <a href="roscpp时钟.html">
+            
+                    
+                    roscpp时钟
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.7" data-path="日志和异常.html">
+            
+                <a href="日志和异常.html">
+            
+                    
+                    日志和异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="rospy.html">
+            
+                <a href="rospy.html">
+            
+                    
+                    rospy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.8" data-path="TF-坐标转换.html">
+            
+                <a href="TF-坐标转换.html">
+            
+                    
+                    TF 坐标转换
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="TF-in-roscpp.html">
+            
+                <a href="TF-in-roscpp.html">
+            
+                    
+                    TF in roscpp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >TF 坐标转换</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="tf-&#x5750;&#x6807;&#x8F6C;&#x6362;">TF &#x5750;&#x6807;&#x8F6C;&#x6362;</h1>
+<h2 id="1-tf">1. TF</h2>
+<p>TF&#x5373;TransForm&#xFF0C;&#x5750;&#x6807;&#x8F6C;&#x6362;&#xFF0C;&#x5BF9;&#x4E8E;&#x673A;&#x5668;&#x4EBA;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x800C;&#x8A00;&#xFF0C;&#x672C;&#x8EAB;&#x4F1A;&#x6D89;&#x53CA;&#x5230;&#x591A;&#x4E2A;&#x5750;&#x6807;&#x7CFB;&#xFF0C;&#x800C;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x5B9E;&#x9645;&#x8FD0;&#x52A8;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x8981;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#x624D;&#x80FD;&#x51C6;&#x786E;&#x5B8C;&#x6210;&#xFF0C;&#x8FD9;&#x5C31;&#x6D89;&#x53CA;&#x5230;&#x4E86;&#x5750;&#x6807;&#x8F6C;&#x5316;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x673A;&#x68B0;&#x624B;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x800C;&#x8A00;&#xFF0C;&#x901A;&#x8FC7;&#x6444;&#x50CF;&#x5934;&#x91C7;&#x96C6;&#x753B;&#x9762;&#xFF0C;&#x5224;&#x65AD;&#x88AB;&#x6293;&#x7269;&#x4F53;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x901A;&#x8FC7;&#x673A;&#x68B0;&#x624B;&#x7684;&#x8FD0;&#x52A8;&#x5C06;&#x7269;&#x4F53;&#x4ECE;&#x4E00;&#x70B9;&#x79FB;&#x52A8;&#x5230;&#x53E6;&#x4E00;&#x70B9;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x573A;&#x666F;&#x4E2D;&#x5C31;&#x6D89;&#x53CA;&#x5230;&#x4E86;&#x591A;&#x4E2A;&#x5750;&#x6807;&#x7CFB;</p>
+<ul>
+<li>&#x6444;&#x50CF;&#x5934;&#x91C7;&#x96C6;&#x5230;&#x7684;&#x753B;&#x9762;&#x4E2D;&#x88AB;&#x6293;&#x7269;&#x4F53;&#x7684;&#x5750;&#x6807;&#x662F;&#x5728;&#x8FD9;&#x6444;&#x50CF;&#x5934;&#x7684;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E00;&#x5E27;&#x56FE;&#x50CF;&#x7684;&#x5750;&#x6807;</li>
+<li>&#x673A;&#x68B0;&#x624B;&#x7684;&#x76F8;&#x5BF9;&#x8FD0;&#x52A8;&#x9700;&#x8981;&#x7528;&#x5230;&#x7684;&#x5750;&#x6807;&#x662F;&#x5728;&#x673A;&#x68B0;&#x624B;&#x7684;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x673A;&#x68B0;&#x624B;&#x7684;&#x539F;&#x59CB;&#x4F4D;&#x7F6E;&#x7684;&#x5750;&#x6807;</li>
+<li>&#x5BF9;&#x4E8E;&#x6444;&#x50CF;&#x5934;&#x3001;&#x673A;&#x68B0;&#x624B;&#x3001;&#x88AB;&#x6293;&#x7269;&#x4F53;&#x800C;&#x8A00;&#xFF0C;&#x5728;&#x771F;&#x5B9E;&#x4E16;&#x754C;&#x4E2D;&#x53C8;&#x6709;&#x4E00;&#x4E2A;&#x771F;&#x5B9E;&#x4E16;&#x754C;&#x4E2D;&#x7684;&#x5750;&#x6807;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x771F;&#x5B9E;&#x4E16;&#x754C;&#x7684;&#x5750;&#x6807;</li>
+</ul>
+<p>&#x5BF9;&#x4E8E;&#x88AB;&#x6293;&#x7269;&#x4F53;&#x800C;&#x8A00;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x65F6;&#x523B;&#xFF0C;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;&#x51E0;&#x4E2A;&#x5750;&#x6807;&#x7CFB;&#x6709;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x7684;&#x5750;&#x6807;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x7269;&#x4F53;&#x6709;&#x591A;&#x4E2A;&#x5750;&#x6807;&#x3002;&#x56E0;&#x6B64;&#x8981;&#x80FD;&#x591F;&#x987A;&#x5229;&#x5B8C;&#x6210;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5728;&#x4F7F;&#x7528;&#x5750;&#x6807;&#x6570;&#x636E;&#x4E4B;&#x524D;&#x5BF9;&#x8FD9;&#x4E9B;&#x5750;&#x6807;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x5750;&#x6807;&#x7CFB;&#x4E4B;&#x95F4;&#x5B8C;&#x6210;&#x8F6C;&#x6362;&#x3002;</p>
+<h2 id="2-ros&#x4E2D;&#x7684;tf">2. ROS&#x4E2D;&#x7684;TF</h2>
+<p>&#x5750;&#x6807;&#x53D8;&#x6362;&#x5305;&#x62EC;&#x4E86;&#x4F4D;&#x7F6E;&#x548C;&#x59FF;&#x6001;&#x4E24;&#x4E2A;&#x65B9;&#x9762;&#x7684;&#x53D8;&#x6362;&#xFF0C;ROS&#x4E2D;&#x7684;tf&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x8BA9;&#x7528;&#x6237;&#x968F;&#x65F6;&#x8BB0;&#x5F55;&#x591A;&#x4E2A;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x3002;tf&#x4FDD;&#x6301;&#x7F13;&#x5B58;&#x7684;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x5750;&#x6807;&#x7CFB;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5E76;&#x4E14;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x5728;&#x4EFB;&#x4F55;&#x671F;&#x671B;&#x7684;&#x65F6;&#x95F4;&#x70B9;&#x5728;&#x4EFB;&#x4F55;&#x4E24;&#x4E2A;&#x5750;&#x6807;&#x7CFB;&#x4E4B;&#x95F4;&#x8F6C;&#x6362;&#x70B9;&#xFF0C;&#x77E2;&#x91CF;&#x7B49;&#x3002;</p>
+<p>tf&#x7684;&#x5B9A;&#x4E49;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#x4E00;&#x79CD;&#x6807;&#x51C6;&#x89C4;&#x8303;&#xFF0C;&#x5B83;&#x5B9A;&#x4E49;&#x4E86;&#x5750;&#x6807;&#x8F6C;&#x6362;&#x7684;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x548C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;tf&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x672C;&#x8D28;&#x662F;&#x6811;&#x5F62;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x79F0;&#x4E4B;&#x4E3A;<code>tf tree</code></p>
+<ul>
+<li>tf&#x53EF;&#x4EE5;&#x88AB;&#x770B;&#x4F5C;&#x662F;&#x4E00;&#x4E2A;<code>topic</code>&#xFF1A;<code>/tf</code>&#xFF0C;&#x8BE5;&#x8BDD;&#x9898;&#x4E2D;&#x7684;<code>message</code>&#x4FDD;&#x5B58;&#x7684;&#x5C31;&#x662F;<code>tf tree</code>&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7EF4;&#x62A4;&#x7740;&#x6574;&#x4E2A;ros&#x7CFB;&#x7EDF;&#x7684;&#x5750;&#x6807;&#x8F6C;&#x6362;&#x5173;&#x7CFB;&#x3002;</li>
+<li>tf&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x770B;&#x4F5C;&#x662F;&#x4E00;&#x4E2A;<code>package</code>&#xFF0C;&#x5B83;&#x4E5F;&#x96C6;&#x6210;&#x4E86;&#x4E00;&#x4E9B;&#x5DE5;&#x5177;&#xFF0C;&#x6BD4;&#x5982;&#x53EF;&#x89C6;&#x5316;&#x3001;&#x67E5;&#x770B;&#x5173;&#x8282;&#x95F4;&#x7684;tf&#xFF0C;<code>debug tf</code>&#x7B49;&#x3002;tf&#x7684;&#x4E00;&#x4E9B;&#x63A5;&#x53E3;&#xFF0C;&#x5C31;&#x662F;roscpp&#x548C;rospy&#x91CC;&#x7684;API</li>
+</ul>
+<p>ROS&#x4E2D;&#x5173;&#x4E8E;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x63CF;&#x8FF0;&#x5206;&#x4E3A;link&#xFF08;&#x90E8;&#x4EF6;&#xFF09;&#x548C;joint&#xFF08;&#x5173;&#x8282;&#xFF09;&#xFF0C;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x6BCF;&#x4E2A;&#x6BCF;&#x4E2A;link&#x90FD;&#x5BF9;&#x5E94;&#x8FD9;&#x4E2A;&#x4E00;&#x4E2A;frame&#xFF0C;&#x5373;&#x5750;&#x6807;&#x7CFB;&#x3002;&#x4E0B;&#x56FE;&#x4E3A;&#x4E00;&#x4E2A;&#x673A;&#x5668;&#x4EBA;&#x7684;TF&#x7ED3;&#x6784;&#x7684;&#x62BD;&#x8C61;&#x793A;&#x610F;&#x56FE;</p>
+<p><img src="imgs/tf_wiki.png" alt="tf_wiki.png"></p>
+<p>link&#x548C;frame&#x7684;&#x6982;&#x5FF5;&#x662F;&#x7ED1;&#x5B9A;&#x7684;&#xFF0C;&#x4E00;&#x4E2A;&#x673A;&#x5668;&#x4EBA;&#x5404;&#x4E2A;frame&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x5C31;&#x662F;&#x7531;<code>tf tree</code>&#x6765;&#x7EF4;&#x62A4;&#x7684;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6267;&#x884C;<code>view_frames</code>&#x547D;&#x4EE4;&#x6765;&#x751F;&#x6210;<code>frames.pdf</code>&#x6765;&#x663E;&#x793A;<code>tf tree</code>&#x7ED3;&#x6784;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;</p>
+<p><img src="imgs/tf_tree.png" alt="tf_tree.png"></p>
+<p>&#x6BCF;&#x4E2A;&#x5706;&#x5708;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;frame&#xFF0C;&#x5BF9;&#x5E94;&#x7740;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x4E00;&#x4E2A;link&#xFF0C;&#x4EFB;&#x610F;&#x4E24;&#x4E2A;frame&#x4E4B;&#x95F4;&#x90FD;&#x5FC5;&#x987B;&#x662F;&#x8054;&#x901A;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x67D0;&#x4E00;&#x73AF;&#x8282;&#x7684;&#x65AD;&#x88C2;&#xFF0C;&#x5C31;&#x4F1A;&#x5F15;&#x53D1;error&#x7CFB;&#x7EDF;&#x62A5;&#x9519;&#xFF0E;&#x6240;&#x4EE5;&#x5B8C;&#x6574;&#x7684;<code>tf tree</code>&#x4E0D;&#x80FD;&#x6709;&#x4EFB;&#x4F55;&#x65AD;&#x5C42;&#x7684;&#x5730;&#x65B9;&#x3002;&#x4E24;&#x4E2A;frame&#x4E4B;&#x95F4;&#x90FD;&#x6709;<code>broadcaster</code>&#xFF0C;&#x8FD9;&#x91CC;&#x7684;<code>broadcaster</code>&#x5C31;&#x662F;ROS&#x4E2D;<code>Topic</code>&#x901A;&#x4FE1;&#x4E2D;&#x7684;<code>publisher</code>&#xFF0C;&#x5F53;&#x4E24;&#x4E2A;frame&#x4E4B;&#x95F4;&#x6709;&#x76F8;&#x5BF9;&#x8FD0;&#x52A8;&#x4E86;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x53D1;&#x5E03;&#x6D88;&#x606F;&#x6765;&#x6C9F;&#x901A;&#x4E24;&#x4E2A;frame&#xFF0C;&#x5B8C;&#x6210;&#x4FE1;&#x606F;&#x4EA4;&#x6362;&#x3001;&#x5750;&#x6807;&#x8F6C;&#x6362;</p>
+<ul>
+<li>&#x53C2;&#x8003;<a href="https://blog.csdn.net/wilylcyu/article/details/51724966" target="_blank">ROS&#x4E2D;&#x89C2;&#x5BDF;TF&#x7684;&#x5DE5;&#x5177;</a></li>
+</ul>
+<h2 id="3-tf&#x6D88;&#x606F;">3. TF&#x6D88;&#x606F;</h2>
+<p><code>TransformStampde.msg</code>&#x5B9A;&#x4E49;&#x7684;&#x6D88;&#x606F;&#x5C31;&#x662F;<code>broadcaster</code>&#x7EF4;&#x6301;&#x4E24;&#x4E2A;frame&#x4E4B;&#x95F4;&#x5173;&#x7CFB;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;</p>
+<p>TransformStamped.msg&#x683C;&#x5F0F;&#x89C4;&#x8303;</p>
+<pre><code class="lang-yaml">std_mags/Header header
+        uint32 seq
+        time stamp
+        string frame_id
+string child_frame_id
+geometry_msgs/Transform transform
+        geometry_msgs/Vector3 translation
+                float64 x
+                float64 y
+                float64 z
+        geometry_msgs/Quaternion rotation
+                float64 x
+                float64 y
+                flaot64 z
+                float64 w
+</code></pre>
+<ul>
+<li><code>header</code>&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x5E8F;&#x53F7;&#x3001;&#x65F6;&#x95F4;&#x6233;&#x3001;frame&#x540D;&#x5B57;</li>
+<li><code>child_frame_id</code>&#x5B9A;&#x4E49;&#x7684;&#x662F;&#x5B50;&#x5750;&#x6807;&#x7CFB;&#xFF0C;&#x5373;&#x5F53;&#x524D;&#x5750;&#x6807;&#x7CFB;&#x8981;&#x4E0E;&#x90A3;&#x4E2A;&#x5750;&#x6807;&#x7CFB;&#x8FDB;&#x884C;&#x5750;&#x6807;&#x8F6C;&#x6362;</li>
+<li><code>geometry_msgs/Transform</code>&#x5B9A;&#x4E49;&#x7684;&#x5C31;&#x662F;&#x8FD9;&#x4E24;&#x4E2A;frame&#x4E4B;&#x95F4;&#x4F5C;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5750;&#x6807;&#x53D8;&#x6362;&#xFF0C;<code>Vector3</code>&#x5B9A;&#x4E49;&#x5E73;&#x79FB;&#xFF0C;<code>Quaternion</code>&#x5B9A;&#x4E49;&#x4E09;&#x7EF4;&#x65CB;&#x8F6C;</li>
+</ul>
+<p><img src="imgs/tf_tree_eg.jpg" alt="tf_tree_eg.jpg"></p>
+<p>&#x5BF9;&#x4E8E;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#x7684;&#x5750;&#x6807;&#x8F6C;&#x6362;&#x5173;&#x7CFB;&#x800C;&#x8A00;</p>
+<ul>
+<li><code>header</code>&#x4E2D;<code>frame_id</code>&#x4E3A;<code>odom</code></li>
+<li><code>child_frame_id</code>&#x4E3A;<code>Baselink_footprint</code></li>
+<li><code>transform</code>&#x7684;&#x5177;&#x4F53;&#x503C;&#x5373;<code>odom</code>&#x548C;<code>Baselink_footprint</code>&#x5750;&#x6807;&#x7CFB;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x5173;&#x7CFB;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="rospy.html" class="navigation navigation-prev " aria-label="Previous page: rospy">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="TF-in-roscpp.html" class="navigation navigation-next " aria-label="Next page: TF in roscpp">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TF 坐标转换","level":"1.2.8","depth":2,"next":{"title":"TF in roscpp","level":"1.2.8.1","depth":3,"path":"ROS/TF-in-roscpp.md","ref":"./ROS/TF-in-roscpp.md","articles":[]},"previous":{"title":"rospy","level":"1.2.7","depth":2,"path":"ROS/rospy.md","ref":"./ROS/rospy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","code"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"splitter":{},"chapter-fold":{},"code":{"copyButtons":true},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Liyi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","language":"zh-hans","gitbook":"3.2.3","description":"A new life"},"file":{"path":"ROS/TF-坐标转换.md","mtime":"2021-02-24T04:22:48.227Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-24T04:23:22.887Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
